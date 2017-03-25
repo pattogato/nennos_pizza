@@ -1,0 +1,6 @@
+framework module Pods_Nennos_pizzaTests {
+  umbrella header "Pods-Nennos pizzaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
