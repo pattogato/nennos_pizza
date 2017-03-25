@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B109DF411E86F6E100D68787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109DF401E86F6E100D68787 /* AppDelegate.swift */; };
-		B109DF431E86F6E100D68787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109DF421E86F6E100D68787 /* ViewController.swift */; };
 		B109DF461E86F6E100D68787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B109DF441E86F6E100D68787 /* Main.storyboard */; };
 		B109DF481E86F6E100D68787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B109DF471E86F6E100D68787 /* Assets.xcassets */; };
 		B109DF4B1E86F6E100D68787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B109DF491E86F6E100D68787 /* LaunchScreen.storyboard */; };
 		B109DF561E86F6E100D68787 /* Nennos_pizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109DF551E86F6E100D68787 /* Nennos_pizzaTests.swift */; };
+		B109DF671E86FB0A00D68787 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109DF611E86FB0A00D68787 /* BaseModel.swift */; };
+		B109DF691E86FBA300D68787 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B109DF681E86FBA300D68787 /* Menu.storyboard */; };
+		B109DF6B1E86FBAB00D68787 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B109DF6A1E86FBAB00D68787 /* Cart.storyboard */; };
+		B109DF6D1E86FBB100D68787 /* Create.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B109DF6C1E86FBB100D68787 /* Create.storyboard */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +37,6 @@
 		95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizzaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B109DF3D1E86F6E100D68787 /* Nennos pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nennos pizza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B109DF401E86F6E100D68787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B109DF421E86F6E100D68787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B109DF451E86F6E100D68787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B109DF471E86F6E100D68787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B109DF4A1E86F6E100D68787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +44,10 @@
 		B109DF511E86F6E100D68787 /* Nennos pizzaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nennos pizzaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B109DF551E86F6E100D68787 /* Nennos_pizzaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nennos_pizzaTests.swift; sourceTree = "<group>"; };
 		B109DF571E86F6E100D68787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B109DF611E86FB0A00D68787 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		B109DF681E86FBA300D68787 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		B109DF6A1E86FBAB00D68787 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		B109DF6C1E86FBB100D68787 /* Create.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Create.storyboard; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,11 +115,12 @@
 		B109DF3F1E86F6E100D68787 /* Nennos pizza */ = {
 			isa = PBXGroup;
 			children = (
+				B109DF601E86FB0A00D68787 /* Database */,
+				B109DF621E86FB0A00D68787 /* Managers */,
+				B109DF631E86FB0A00D68787 /* Networking */,
+				B109DF641E86FB0A00D68787 /* UI */,
 				B109DF401E86F6E100D68787 /* AppDelegate.swift */,
-				B109DF421E86F6E100D68787 /* ViewController.swift */,
-				B109DF441E86F6E100D68787 /* Main.storyboard */,
 				B109DF471E86F6E100D68787 /* Assets.xcassets */,
-				B109DF491E86F6E100D68787 /* LaunchScreen.storyboard */,
 				B109DF4C1E86F6E100D68787 /* Info.plist */,
 			);
 			path = "Nennos pizza";
@@ -126,6 +133,64 @@
 				B109DF571E86F6E100D68787 /* Info.plist */,
 			);
 			path = "Nennos pizzaTests";
+			sourceTree = "<group>";
+		};
+		B109DF601E86FB0A00D68787 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B109DF611E86FB0A00D68787 /* BaseModel.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		B109DF621E86FB0A00D68787 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B109DF631E86FB0A00D68787 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B109DF641E86FB0A00D68787 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B109DF6E1E86FBC500D68787 /* Dataproviders */,
+				B109DF651E86FB0A00D68787 /* Storyboards */,
+				B109DF661E86FB0A00D68787 /* ViewControllers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B109DF651E86FB0A00D68787 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B109DF491E86F6E100D68787 /* LaunchScreen.storyboard */,
+				B109DF441E86F6E100D68787 /* Main.storyboard */,
+				B109DF681E86FBA300D68787 /* Menu.storyboard */,
+				B109DF6A1E86FBAB00D68787 /* Cart.storyboard */,
+				B109DF6C1E86FBB100D68787 /* Create.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B109DF661E86FB0A00D68787 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B109DF6E1E86FBC500D68787 /* Dataproviders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dataproviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +287,9 @@
 				B109DF4B1E86F6E100D68787 /* LaunchScreen.storyboard in Resources */,
 				B109DF481E86F6E100D68787 /* Assets.xcassets in Resources */,
 				B109DF461E86F6E100D68787 /* Main.storyboard in Resources */,
+				B109DF6B1E86FBAB00D68787 /* Cart.storyboard in Resources */,
+				B109DF6D1E86FBB100D68787 /* Create.storyboard in Resources */,
+				B109DF691E86FBA300D68787 /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B109DF431E86F6E100D68787 /* ViewController.swift in Sources */,
+				B109DF671E86FB0A00D68787 /* BaseModel.swift in Sources */,
 				B109DF411E86F6E100D68787 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +430,7 @@
 				B109DF451E86F6E100D68787 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		B109DF491E86F6E100D68787 /* LaunchScreen.storyboard */ = {
@@ -370,6 +439,7 @@
 				B109DF4A1E86F6E100D68787 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -545,6 +615,7 @@
 				B109DF5C1E86F6E100D68787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B109DF5D1E86F6E100D68787 /* Build configuration list for PBXNativeTarget "Nennos pizzaTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +624,7 @@
 				B109DF5F1E86F6E100D68787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
