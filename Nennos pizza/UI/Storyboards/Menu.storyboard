@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Nennos pizza-->
         <scene sceneID="YWb-Mn-y88">
             <objects>
-                <viewController id="JFb-ci-f32" sceneMemberID="viewController">
+                <viewController id="JFb-ci-f32" customClass="MenuViewController" customModule="Nennos_pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SPa-ij-Ald"/>
                         <viewControllerLayoutGuide type="bottom" id="821-lU-Fu2"/>
@@ -20,13 +20,75 @@
                     <view key="view" contentMode="scaleToFill" id="yYc-SD-kzH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5IG-42-DXb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" id="7bC-7z-hT7">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bC-7z-hT7" id="uwY-KK-XWU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pizzaname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyh-jn-AVK">
+                                                    <rect key="frame" x="21" y="11" width="83" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JFb-ci-f32" id="xr2-gq-CHH"/>
+                                    <outlet property="delegate" destination="JFb-ci-f32" id="eFh-JA-eJ8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5IG-42-DXb" firstAttribute="leading" secondItem="yYc-SD-kzH" secondAttribute="leading" id="AQp-TN-aKj"/>
+                            <constraint firstItem="5IG-42-DXb" firstAttribute="top" secondItem="SPa-ij-Ald" secondAttribute="bottom" id="ql7-d5-BS7"/>
+                            <constraint firstAttribute="trailing" secondItem="5IG-42-DXb" secondAttribute="trailing" id="s17-Dk-DZn"/>
+                            <constraint firstItem="821-lU-Fu2" firstAttribute="top" secondItem="5IG-42-DXb" secondAttribute="bottom" id="sRM-wo-ZFP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="VW5-K9-YKD"/>
+                    <navigationItem key="navigationItem" title="Nennos pizza" id="VW5-K9-YKD">
+                        <barButtonItem key="leftBarButtonItem" image="ic_cart_navbar" style="plain" id="ClC-pM-1wo">
+                            <connections>
+                                <segue destination="Ywh-uZ-dZy" kind="presentation" id="xkJ-e6-hyI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AsP-D6-VTd">
+                            <connections>
+                                <segue destination="ph4-7R-Mw8" kind="presentation" id="5FU-Ym-MDW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uga-RD-jWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="104.7976011994003"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="K6n-if-TKB">
+            <objects>
+                <viewControllerPlaceholder id="ph4-7R-Mw8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRl-HD-gMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1652" y="-156"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="Vlz-S2-TUu">
+            <objects>
+                <viewControllerPlaceholder id="Ywh-uZ-dZy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffN-Lx-9aq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="-72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jBU-QM-OVr">
@@ -47,4 +109,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="104.7976011994003"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_cart_navbar" width="24" height="24"/>
+    </resources>
 </document>
