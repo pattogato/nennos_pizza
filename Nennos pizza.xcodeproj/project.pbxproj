@@ -24,6 +24,9 @@
 		B109DF851E872EE300D68787 /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B109DF821E872EE300D68787 /* SF-UI-Display-Regular.otf */; };
 		B112D3801E88F7C60087FE10 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */; };
 		B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */; };
+		B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */; };
+		B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */; };
+		B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,9 @@
 		B109DF821E872EE300D68787 /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
 		B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPizzaViewController.swift; sourceTree = "<group>"; };
+		B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
+		B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPizzaDataProvider.swift; path = Dataprovider/CustomPizzaDataProvider.swift; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -210,6 +216,7 @@
 		B109DF6E1E86FBC500D68787 /* Dataproviders */ = {
 			isa = PBXGroup;
 			children = (
+				B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */,
 			);
 			name = Dataproviders;
 			sourceTree = "<group>";
@@ -227,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				B109DF781E86FE1400D68787 /* Extensions.swift */,
+				B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 				B109DF801E872EE300D68787 /* SF-UI-Display-Bold.otf */,
 				B109DF811E872EE300D68787 /* SF-UI-Display-Heavy.otf */,
 				B109DF821E872EE300D68787 /* SF-UI-Display-Regular.otf */,
+				B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -350,6 +359,7 @@
 			files = (
 				B109DF831E872EE300D68787 /* SF-UI-Display-Bold.otf in Resources */,
 				B109DF4B1E86F6E100D68787 /* LaunchScreen.storyboard in Resources */,
+				B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */,
 				B109DF851E872EE300D68787 /* SF-UI-Display-Regular.otf in Resources */,
 				B109DF731E86FDB100D68787 /* Localizable.strings in Resources */,
 				B109DF481E86F6E100D68787 /* Assets.xcassets in Resources */,
@@ -469,6 +479,8 @@
 			files = (
 				B109DF671E86FB0A00D68787 /* BaseModel.swift in Sources */,
 				B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */,
+				B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */,
+				B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */,
 				B109DF791E86FE1400D68787 /* Extensions.swift in Sources */,
 				B112D3801E88F7C60087FE10 /* IngredientTableViewCell.swift in Sources */,
 				B109DF7E1E87044000D68787 /* Stylesheet.swift in Sources */,

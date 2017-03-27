@@ -15,16 +15,15 @@ class IngredientTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientNameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setupUI(viewModel: IngredientViewModel) {
+        self.ingredientNameLabel.text = viewModel.name
+        self.priceLabel.text = viewModel.currency + " " + "\(viewModel.price)"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override var isSelected: Bool {
+        didSet {
+            self.tickImageView.isHidden = !isSelected
+        }
     }
 
 }

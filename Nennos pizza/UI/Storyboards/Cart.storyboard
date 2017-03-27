@@ -12,7 +12,7 @@
         <!--Cart-->
         <scene sceneID="Iva-CD-cux">
             <objects>
-                <viewController id="AYN-cb-CZ8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" id="AYN-cb-CZ8" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hrh-7I-vC7"/>
                         <viewControllerLayoutGuide type="bottom" id="7GC-2b-7Tm"/>

@@ -8,8 +8,20 @@
 
 import UIKit
 
+protocol IngredientViewModel {
+    var name: String { get }
+    var price: Double { get }
+    var currency: String { get }
+}
+
 class CustomPizzaViewController: UIViewController {
 
+    var dataProvider: CustomPizzaDataProviderProtocol!
+    
+    fileprivate struct Constants {
+        static let ingredientCellIdentifier = "IngredientTableViewCell"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +34,34 @@ class CustomPizzaViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapAddToCartButton(_ sender: Any) {
+        // TODO: add to cart & show cart view on tap
+        print("add to cart")
+        NotificationHelper.showStatusBarMessage("notification.added.to.cart".localized, action: nil)
     }
-    */
+    
+}
 
+extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataProvider.numberOfRows()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: Constants.ingredientCellIdentifier, for: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? IngredientTableViewCell else {
+            assertionFailure("Cell's class not set properly")
+            return
+        }
+        
+        cell.setupUI(viewModel: dataProvider.modelFor(indexPath: indexPath))
+    }
 }

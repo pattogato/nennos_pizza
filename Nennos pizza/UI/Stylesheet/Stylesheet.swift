@@ -30,6 +30,10 @@ struct Fonts {
         return UIFont(name: "SFUIDisplay-Bold", size: size)!
     }
     
+    static func sfDisplaySemibold(size: CGFloat) -> UIFont {
+        return UIFont(name: "SFUIDisplay-Semibold", size: size)!
+    }
+    
 }
 
 //static func initialUISetup() {
