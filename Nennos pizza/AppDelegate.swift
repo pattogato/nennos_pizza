@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Load application window
+        window = DIManager.resolve(service: UIWindow.self)
+        DIManager.resolve(service: ApplicationRouterProtocol.self).start()
+
         return true
     }
 

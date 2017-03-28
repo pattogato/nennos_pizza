@@ -11,5 +11,11 @@ import Foundation
 protocol CustomPizzaDataProviderProtocol {
     func numberOfRows() -> Int
     func modelFor(indexPath: IndexPath) -> IngredientViewModel
+    func isModelSelected(indexPath: IndexPath) -> Bool
+    func selecItemAt(indexPath: IndexPath)
+    func deSelecItemAt(indexPath: IndexPath)
+}
+
+final class MockedCustomPizzaDataProviderProtocol {
     
 }

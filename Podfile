@@ -7,13 +7,16 @@ target 'Nennos pizza' do
 
   # Pods for Nennos pizza
   
-  # DAL
-  pod 'RealmSwift', '~> 1.1.0' # Local database'
-  # Networking
-  pod 'Alamofire', '~> 4.4.0' # Local database'
-  # UI
-  pod 'Whisper', '~> 4.0.0' # For status bar notifications
-
+    # DAL
+    pod 'RealmSwift', '~> 1.1.0' # Local database'
+    # Networking
+    pod 'Alamofire', '~> 4.4.0' # Local database'
+    # UI
+    pod 'Whisper', '~> 4.0.0' # For status bar notifications
+    # Dependency injection
+    pod 'Swinject'
+    pod 'SwinjectStoryboard'
+    
   target 'Nennos pizzaTests' do
     inherit! :search_paths
     # Pods for testing

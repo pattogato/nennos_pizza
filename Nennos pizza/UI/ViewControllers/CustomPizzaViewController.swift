@@ -63,5 +63,14 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         cell.setupUI(viewModel: dataProvider.modelFor(indexPath: indexPath))
+        cell.isSelected = dataProvider.isModelSelected(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        dataProvider.selecItemAt(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        dataProvider.deSelecItemAt(indexPath: indexPath)
     }
 }
