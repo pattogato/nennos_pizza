@@ -11,6 +11,7 @@ target 'Nennos pizza' do
     pod 'RealmSwift', '~> 1.1.0' # Local database'
     # Networking
     pod 'Alamofire', '~> 4.4.0' # Local database'
+    pod 'AlamofireImage' # Asnychron image loading 
     # UI
     pod 'Whisper', '~> 4.0.0' # For status bar notifications
     # Dependency injection

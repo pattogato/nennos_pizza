@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AlamofireImage
 
-protocol IngredientViewModel {
+protocol IngredientViewModelProtocol {
     var name: String { get }
     var price: Double { get }
     var currency: String { get }
@@ -18,6 +19,9 @@ class CustomPizzaViewController: UIViewController {
 
     var dataProvider: CustomPizzaDataProviderProtocol!
     
+    @IBOutlet weak var pizzaImageView: UIImageView!
+    
+    
     fileprivate struct Constants {
         static let ingredientCellIdentifier = "IngredientTableViewCell"
     }
@@ -26,6 +30,11 @@ class CustomPizzaViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let imageUrl = dataProvider.getPizzaImageUrl() {
+            pizzaImageView.af_setImage(
+                withURL: imageUrl,
+                placeholderImage: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +72,7 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         cell.setupUI(viewModel: dataProvider.modelFor(indexPath: indexPath))
-        cell.isSelected = dataProvider.isModelSelected(indexPath: indexPath)
+        cell.setSelected(dataProvider.isModelSelected(indexPath: indexPath), animated: false)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

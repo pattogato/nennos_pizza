@@ -13,12 +13,9 @@ import Swinject
 final class  DataprovidersAssembly: Assembly {
     
     func assemble(container: Container) {
-//        container.register(FeedDataProviderProtocol.self) { r in
-//            return FeedDataProvider(
-//                feedService: r.resolve(FeedServiceProtocol.self)!,
-//                dalHelper: r.resolve(DALHelperProtocol.self)!)
-//        }
-        
+        container.register(CustomPizzaDataProviderProtocol.self) { r in
+            return MockedCustomPizzaDataProviderProtocol()
+        }
         
     }
     
