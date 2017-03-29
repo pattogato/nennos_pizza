@@ -35,6 +35,9 @@
 		B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */; };
 		B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */; };
 		B1F7C4FD1E8AC4A0009F7662 /* AlphaDisablaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C4FC1E8AC4A0009F7662 /* AlphaDisablaButton.swift */; };
+		B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */; };
+		B1F7C5011E8BB5C7009F7662 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */; };
+		B1F7C5031E8BB6F3009F7662 /* AddToCartUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +89,9 @@
 		B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
 		B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPizzaDataProvider.swift; path = Dataprovider/CustomPizzaDataProvider.swift; sourceTree = "<group>"; };
 		B1F7C4FC1E8AC4A0009F7662 /* AlphaDisablaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaDisablaButton.swift; sourceTree = "<group>"; };
+		B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuDataProvider.swift; path = Dataprovider/MenuDataProvider.swift; sourceTree = "<group>"; };
+		B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToCartUIButton.swift; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -237,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */,
+				B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */,
 			);
 			name = Dataproviders;
 			sourceTree = "<group>";
@@ -282,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */,
+				B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				B1F7C4FC1E8AC4A0009F7662 /* AlphaDisablaButton.swift */,
+				B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */,
 			);
 			path = CustomUIElements;
 			sourceTree = "<group>";
@@ -518,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B109DF671E86FB0A00D68787 /* BaseModel.swift in Sources */,
+				B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */,
 				B15211881E8A4BAF0042119E /* DataprovidersAssembly.swift in Sources */,
 				B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */,
 				B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */,
@@ -526,8 +536,10 @@
 				B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */,
 				B15211861E8A4BA70042119E /* StoragesAssembly.swift in Sources */,
 				B109DF791E86FE1400D68787 /* Extensions.swift in Sources */,
+				B1F7C5031E8BB6F3009F7662 /* AddToCartUIButton.swift in Sources */,
 				B15211801E8A4B2D0042119E /* ApplicationRouter.swift in Sources */,
 				B112D3801E88F7C60087FE10 /* IngredientTableViewCell.swift in Sources */,
+				B1F7C5011E8BB5C7009F7662 /* MenuTableViewCell.swift in Sources */,
 				B15211841E8A4B970042119E /* ManagersAssembly.swift in Sources */,
 				B15211821E8A4B8E0042119E /* ServicesAssembly.swift in Sources */,
 				B109DF7E1E87044000D68787 /* Stylesheet.swift in Sources */,

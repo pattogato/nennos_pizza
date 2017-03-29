@@ -17,6 +17,9 @@ final class  DataprovidersAssembly: Assembly {
             return MockedCustomPizzaDataProviderProtocol()
         }
         
+        container.register(MenuDataProviderProtocol.self) { r in
+            return MockedMenuDataProvider()
+        }
     }
     
 }

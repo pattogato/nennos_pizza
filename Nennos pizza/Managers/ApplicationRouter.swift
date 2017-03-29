@@ -26,9 +26,8 @@ final class ApplicationRouter: ApplicationRouterProtocol {
         self.storyboards = storyboards
     }
     
-    
     func start() {
-        showViewController(ofType: .customPizza)
+        showViewController(ofType: .menu)
     }
     
     func showViewController(ofType type: ViewControllers) {

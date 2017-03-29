@@ -15,14 +15,14 @@ protocol CustomPizzaDataProviderProtocol {
     func selecItemAt(indexPath: IndexPath)
     func deSelecItemAt(indexPath: IndexPath)
     func getPizzaImageUrl() -> URL?
-    func getPriceString() -> String
+    func getSumPrice() -> Double
     
     var isAddToCartButtonEnabled: Bool { get }
     var delegate: CustomPizzaDataProviderDelegate? { get set }
 }
 
 protocol CustomPizzaDataProviderDelegate: class {
-    func refreshSumPrice(priceString: String)
+    func refreshSumPrice(price: Double)
 }
 
 final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtocol {
@@ -48,12 +48,12 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
     
     func selecItemAt(indexPath: IndexPath) {
         selectedIndexPaths.append(indexPath)
-        delegate?.refreshSumPrice(priceString: self.getPriceString())
+        delegate?.refreshSumPrice(price: self.getSumPrice())
     }
     
     func deSelecItemAt(indexPath: IndexPath) {
         selectedIndexPaths = selectedIndexPaths.filter({ $0 != indexPath })
-        delegate?.refreshSumPrice(priceString: self.getPriceString())
+        delegate?.refreshSumPrice(price: self.getSumPrice())
     }
     
     func getPizzaImageUrl() -> URL? {
@@ -64,11 +64,11 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
         return selectedIndexPaths.count != 0
     }
     
-    func getPriceString() -> String {
+    func getSumPrice() -> Double {
         var sumPrice: Double = 0
         selectedIndexPaths.forEach({ sumPrice += modelFor(indexPath: $0).price })
         // TODO: Currency should be properly handled
-        return "$\(sumPrice)"
+        return sumPrice
     }
 }
 

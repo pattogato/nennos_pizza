@@ -16,6 +16,16 @@ extension String {
     
 }
 
+extension Double {
+    private struct Constants {
+        static let priceFormat = "$%.1f"
+    }
+    
+    var priceString: String {
+        return String(format: Constants.priceFormat, self)
+    }
+}
+
 // Source: http://stackoverflow.com/questions/24263007/how-to-use-hex-colour-values-in-swift-ios
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {

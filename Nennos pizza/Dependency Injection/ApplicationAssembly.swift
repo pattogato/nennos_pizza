@@ -48,6 +48,10 @@ final class ApplicationAssembly: Assembly {
             c.dataProvider = r.resolve(CustomPizzaDataProviderProtocol.self)
         }
         
+        container.storyboardInitCompleted(MenuViewController.self) { r, c in
+            c.dataProvider = r.resolve(MenuDataProviderProtocol.self)
+        }
+        
     }
     
 }
@@ -79,18 +83,22 @@ enum Storyboards {
 
 enum ViewControllers {
     case customPizza
+    case menu
     
     
     var storyboard: Storyboards {
         switch self {
         case .customPizza:
             return .create
+        case .menu:
+            return .menu
         }
     }
     
     var identifier: String {
         switch self {
         case .customPizza: return "CustomPizzaViewController"
+        case .menu: return "MenuViewController"
         }
     }
 }

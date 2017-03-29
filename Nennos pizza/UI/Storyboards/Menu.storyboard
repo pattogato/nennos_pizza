@@ -8,11 +8,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Bold.otf">
+            <string>SFUIDisplay-Bold</string>
+        </array>
+        <array key="SF-UI-Display-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Nennos pizza-->
         <scene sceneID="YWb-Mn-y88">
             <objects>
-                <viewController id="JFb-ci-f32" customClass="MenuViewController" customModule="Nennos_pizza" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="JFb-ci-f32" customClass="MenuViewController" customModule="Nennos_pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SPa-ij-Ald"/>
                         <viewControllerLayoutGuide type="bottom" id="821-lU-Fu2"/>
@@ -21,26 +29,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5IG-42-DXb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5IG-42-DXb">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" id="7bC-7z-hT7">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="178" id="7bC-7z-hT7" customClass="MenuTableViewCell" customModule="Nennos_pizza" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bC-7z-hT7" id="uwY-KK-XWU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pizzaname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyh-jn-AVK">
-                                                    <rect key="frame" x="21" y="11" width="83" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wood" translatesAutoresizingMaskIntoConstraints="NO" id="Vqp-8a-uc3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-OI-ouz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
+                                                </imageView>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XO-rX-oUN">
+                                                    <rect key="frame" x="0.0" y="108" width="375" height="70"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="QcG-WO-mOw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="list of pizza's ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ev-Jb-Z2v">
+                                                                <rect key="frame" x="12" y="41" width="147.5" height="17"/>
+                                                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZ9-CU-JpC" customClass="AddToCartUIButton" customModule="Nennos_pizza" customModuleProvider="target">
+                                                                <rect key="frame" x="299" y="30" width="64" height="28"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="0G9-dj-pEf"/>
+                                                                    <constraint firstAttribute="height" constant="28" id="1jV-JL-As3"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Pizza name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mG8-XY-DUn">
+                                                                <rect key="frame" x="12" y="12" width="127" height="29"/>
+                                                                <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="24"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="vZ9-CU-JpC" secondAttribute="trailing" constant="12" id="8kP-6g-bSG"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mG8-XY-DUn" secondAttribute="trailing" constant="12" id="Aw4-Hj-tj2"/>
+                                                            <constraint firstItem="vZ9-CU-JpC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Ev-Jb-Z2v" secondAttribute="trailing" constant="8" id="DmY-XH-Iam"/>
+                                                            <constraint firstItem="mG8-XY-DUn" firstAttribute="top" secondItem="QcG-WO-mOw" secondAttribute="top" constant="12" id="OWM-9d-HRn"/>
+                                                            <constraint firstItem="3Ev-Jb-Z2v" firstAttribute="leading" secondItem="mG8-XY-DUn" secondAttribute="leading" id="WUc-Gq-F7x"/>
+                                                            <constraint firstAttribute="bottom" secondItem="vZ9-CU-JpC" secondAttribute="bottom" constant="12" id="hpL-E6-fKy"/>
+                                                            <constraint firstAttribute="bottom" secondItem="3Ev-Jb-Z2v" secondAttribute="bottom" constant="12" id="i82-p1-pv1"/>
+                                                            <constraint firstItem="3Ev-Jb-Z2v" firstAttribute="top" secondItem="mG8-XY-DUn" secondAttribute="bottom" id="kPX-GC-zdj"/>
+                                                            <constraint firstItem="mG8-XY-DUn" firstAttribute="leading" secondItem="QcG-WO-mOw" secondAttribute="leading" constant="12" id="wlA-Og-BtY"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <blurEffect style="extraLight"/>
+                                                </visualEffectView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Vqp-8a-uc3" secondAttribute="bottom" id="RGB-ee-fSx"/>
+                                                <constraint firstAttribute="bottom" secondItem="ROA-OI-ouz" secondAttribute="bottom" id="WUO-Xt-exR"/>
+                                                <constraint firstItem="ROA-OI-ouz" firstAttribute="top" secondItem="uwY-KK-XWU" secondAttribute="top" id="Z8Y-jv-hC4"/>
+                                                <constraint firstAttribute="trailing" secondItem="ROA-OI-ouz" secondAttribute="trailing" id="ang-hu-7sI"/>
+                                                <constraint firstItem="Vqp-8a-uc3" firstAttribute="leading" secondItem="uwY-KK-XWU" secondAttribute="leading" id="b33-Mz-vgt"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vqp-8a-uc3" secondAttribute="trailing" id="brP-ra-eux"/>
+                                                <constraint firstAttribute="bottom" secondItem="9XO-rX-oUN" secondAttribute="bottom" id="mPC-EK-q5g"/>
+                                                <constraint firstItem="ROA-OI-ouz" firstAttribute="leading" secondItem="uwY-KK-XWU" secondAttribute="leading" id="uUb-R7-WXD"/>
+                                                <constraint firstAttribute="trailing" secondItem="9XO-rX-oUN" secondAttribute="trailing" id="x16-nY-Emt"/>
+                                                <constraint firstItem="9XO-rX-oUN" firstAttribute="leading" secondItem="uwY-KK-XWU" secondAttribute="leading" id="zUA-Ac-Ytv"/>
+                                                <constraint firstItem="Vqp-8a-uc3" firstAttribute="top" secondItem="uwY-KK-XWU" secondAttribute="top" id="zq0-ql-3lO"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addToCartButton" destination="vZ9-CU-JpC" id="UUK-cW-qOp"/>
+                                            <outlet property="ingredientsLabel" destination="3Ev-Jb-Z2v" id="eiz-hp-mqP"/>
+                                            <outlet property="nameLabel" destination="mG8-XY-DUn" id="bWX-0B-ACg"/>
+                                            <outlet property="pizzaImageView" destination="ROA-OI-ouz" id="HkM-ac-grB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -88,14 +155,14 @@
                 <viewControllerPlaceholder storyboardName="Cart" referencedIdentifier="CartViewController" id="Ywh-uZ-dZy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffN-Lx-9aq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="129"/>
+            <point key="canvasLocation" x="1652" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jBU-QM-OVr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ab7-Jz-vYi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yfn-BI-jkn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yfn-BI-jkn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -110,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_wood" width="1440" height="1216"/>
         <image name="ic_cart_navbar" width="24" height="24"/>
     </resources>
 </document>

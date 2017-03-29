@@ -37,7 +37,7 @@ class CustomPizzaViewController: UIViewController {
         }
         dataProvider.delegate = self
         
-        setupAddToCartButton(priceString: dataProvider.getPriceString())
+        setupAddToCartButton(priceString: dataProvider.getSumPrice().priceString)
     }
     
     func setupAddToCartButton(priceString: String) {
@@ -96,8 +96,8 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension CustomPizzaViewController: CustomPizzaDataProviderDelegate {
     
-    func refreshSumPrice(priceString: String) {
-        setupAddToCartButton(priceString: priceString)
+    func refreshSumPrice(price: Double) {
+        setupAddToCartButton(priceString: price.priceString)
     }
     
 }
