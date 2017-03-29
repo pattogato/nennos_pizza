@@ -15,11 +15,21 @@ protocol CustomPizzaDataProviderProtocol {
     func selecItemAt(indexPath: IndexPath)
     func deSelecItemAt(indexPath: IndexPath)
     func getPizzaImageUrl() -> URL?
+    func getPriceString() -> String
+    
+    var isAddToCartButtonEnabled: Bool { get }
+    var delegate: CustomPizzaDataProviderDelegate? { get set }
+}
+
+protocol CustomPizzaDataProviderDelegate: class {
+    func refreshSumPrice(priceString: String)
 }
 
 final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtocol {
     
-    private var selectedItems = [IndexPath]()
+    weak var delegate: CustomPizzaDataProviderDelegate?
+    
+    private var selectedIndexPaths = [IndexPath]()
     
     func numberOfRows() -> Int {
         return 15
@@ -33,19 +43,32 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
     }
     
     func isModelSelected(indexPath: IndexPath) -> Bool {
-        return selectedItems.contains(indexPath)
+        return selectedIndexPaths.contains(indexPath)
     }
     
     func selecItemAt(indexPath: IndexPath) {
-        selectedItems.append(indexPath)
+        selectedIndexPaths.append(indexPath)
+        delegate?.refreshSumPrice(priceString: self.getPriceString())
     }
     
     func deSelecItemAt(indexPath: IndexPath) {
-        selectedItems = selectedItems.filter({ $0 != indexPath })
+        selectedIndexPaths = selectedIndexPaths.filter({ $0 != indexPath })
+        delegate?.refreshSumPrice(priceString: self.getPriceString())
     }
     
     func getPizzaImageUrl() -> URL? {
         return URL(string: "https://cdn.pbrd.co/images/tOhJQ5N3.png")
+    }
+    
+    var isAddToCartButtonEnabled: Bool {
+        return selectedIndexPaths.count != 0
+    }
+    
+    func getPriceString() -> String {
+        var sumPrice: Double = 0
+        selectedIndexPaths.forEach({ sumPrice += modelFor(indexPath: $0).price })
+        // TODO: Currency should be properly handled
+        return "$\(sumPrice)"
     }
 }
 

@@ -20,7 +20,7 @@ class CustomPizzaViewController: UIViewController {
     var dataProvider: CustomPizzaDataProviderProtocol!
     
     @IBOutlet weak var pizzaImageView: UIImageView!
-    
+    @IBOutlet weak var addToCartButton: UIButton!
     
     fileprivate struct Constants {
         static let ingredientCellIdentifier = "IngredientTableViewCell"
@@ -35,6 +35,16 @@ class CustomPizzaViewController: UIViewController {
                 withURL: imageUrl,
                 placeholderImage: nil)
         }
+        dataProvider.delegate = self
+        
+        setupAddToCartButton(priceString: dataProvider.getPriceString())
+    }
+    
+    func setupAddToCartButton(priceString: String) {
+        self.addToCartButton.isEnabled = dataProvider.isAddToCartButtonEnabled
+        addToCartButton.setTitle(
+            String(format: "custom.button.addtocart".localized, priceString),
+            for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,4 +92,12 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         dataProvider.deSelecItemAt(indexPath: indexPath)
     }
+}
+
+extension CustomPizzaViewController: CustomPizzaDataProviderDelegate {
+    
+    func refreshSumPrice(priceString: String) {
+        setupAddToCartButton(priceString: priceString)
+    }
+    
 }
