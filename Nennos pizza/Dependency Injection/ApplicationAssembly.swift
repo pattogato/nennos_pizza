@@ -58,6 +58,11 @@ final class ApplicationAssembly: Assembly {
         container.storyboardInitCompleted(CartViewController.self) { r, c in
             c.dataProvider = r.resolve(CartDataProviderProtocol.self)
         }
+        
+        // Drinks viewcontroller
+        container.storyboardInitCompleted(DrinksViewController.self) { r, c in
+            c.dataProvider = r.resolve(DrinksDataProviderProtocol.self)
+        }
     }
     
 }

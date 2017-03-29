@@ -8,24 +8,13 @@
 
 import UIKit
 
-protocol CartTableViewCellDelegate: class {
-    func deleteButtonTouched(cell: CartTableViewCell)
-}
 
-class CartTableViewCell: UITableViewCell {
 
-    weak var delegate: CartTableViewCellDelegate?
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    
+class CartTableViewCell: SimpleListTableViewCell {
+
+    weak var delegate: ButtonTableViewCellDelegate?
+
     @IBOutlet weak var deleteButton: UIButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.nameLabel.textColor = Colors.brown
-        self.priceLabel.textColor = Colors.brown
-    }
     
     func setupTotalUI(price: Double) {
         self.nameLabel.text = "cart.total".localized
@@ -40,7 +29,7 @@ class CartTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapDeleteButton(_ sender: Any) {
-        delegate?.deleteButtonTouched(cell: self)
+        delegate?.leftButtonTouched(cell: self)
     }
     
     private func setUIMode(total: Bool) {

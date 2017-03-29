@@ -24,6 +24,10 @@ final class  DataprovidersAssembly: Assembly {
         container.register(CartDataProviderProtocol.self) { r in
             return MockedCartDataProvider()
         }
+        
+        container.register(DrinksDataProviderProtocol.self) { r in
+            return MockedDrinksDataProvider()
+        }
     }
     
 }

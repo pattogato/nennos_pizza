@@ -124,7 +124,7 @@
         <!--Drinks-->
         <scene sceneID="JyU-t0-DV5">
             <objects>
-                <viewController id="bfG-hx-1Pe" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bfG-hx-1Pe" customClass="DrinksViewController" customModule="Nennos_pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s5z-Dx-yKo"/>
                         <viewControllerLayoutGuide type="bottom" id="Awk-ng-ED7"/>
@@ -133,9 +133,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n36-jP-2u2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n36-jP-2u2">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DrinkTableViewCell" id="M2N-Jd-AWZ" customClass="DrinkTableViewCell" customModule="Nennos_pizza" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M2N-Jd-AWZ" id="gDr-lE-exL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbK-7r-O41">
+                                                    <rect key="frame" x="322.5" y="12" width="40.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-zi-W2B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="43" id="xhH-oF-a3Q"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.88235294119999996" green="0.30196078430000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" image="ic_plus"/>
+                                                    <connections>
+                                                        <action selector="didTapAddButton:" destination="M2N-Jd-AWZ" eventType="touchUpInside" id="Mcv-OB-Ubi"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td6-Un-jrd">
+                                                    <rect key="frame" x="43" y="12" width="40.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-Bo-86q">
+                                                    <rect key="frame" x="43" y="43.5" width="332" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="fCU-eT-1cv"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KbU-Bo-86q" firstAttribute="leading" secondItem="Ilt-zi-W2B" secondAttribute="trailing" id="0sg-8h-ABE"/>
+                                                <constraint firstItem="Td6-Un-jrd" firstAttribute="leading" secondItem="Ilt-zi-W2B" secondAttribute="trailing" id="AKL-nZ-HQ2"/>
+                                                <constraint firstItem="Ilt-zi-W2B" firstAttribute="leading" secondItem="gDr-lE-exL" secondAttribute="leading" id="H1D-zx-Orh"/>
+                                                <constraint firstAttribute="trailing" secondItem="IbK-7r-O41" secondAttribute="trailing" constant="12" id="H8Q-mg-mRp"/>
+                                                <constraint firstItem="IbK-7r-O41" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Td6-Un-jrd" secondAttribute="trailing" constant="8" id="I6v-EL-D1J"/>
+                                                <constraint firstAttribute="bottom" secondItem="IbK-7r-O41" secondAttribute="bottom" constant="12" id="W65-9U-2pw"/>
+                                                <constraint firstAttribute="bottom" secondItem="KbU-Bo-86q" secondAttribute="bottom" id="WtK-Pc-AcX"/>
+                                                <constraint firstAttribute="trailing" secondItem="KbU-Bo-86q" secondAttribute="trailing" id="X7R-x4-wyR"/>
+                                                <constraint firstItem="Ilt-zi-W2B" firstAttribute="top" secondItem="gDr-lE-exL" secondAttribute="top" id="Xa1-lt-KSF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ilt-zi-W2B" secondAttribute="bottom" id="oZb-IZ-j4i"/>
+                                                <constraint firstAttribute="bottom" secondItem="Td6-Un-jrd" secondAttribute="bottom" constant="12" id="qTV-GY-PGI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="Td6-Un-jrd" id="pe9-ZN-VkM"/>
+                                            <outlet property="priceLabel" destination="IbK-7r-O41" id="XcY-0o-C4U"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bfG-hx-1Pe" id="3IM-hR-S9G"/>
+                                    <outlet property="delegate" destination="bfG-hx-1Pe" id="DTn-xa-nQW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -147,6 +210,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Drinks" id="8Ru-vR-9ev"/>
+                    <connections>
+                        <outlet property="tableView" destination="n36-jP-2u2" id="aMa-bx-rUA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylH-cL-beR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,5 +222,6 @@
     <resources>
         <image name="ic_delete" width="17" height="17"/>
         <image name="ic_drinks" width="24" height="24"/>
+        <image name="ic_plus" width="17" height="17"/>
     </resources>
 </document>

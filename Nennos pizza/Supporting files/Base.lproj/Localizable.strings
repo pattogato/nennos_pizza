@@ -18,3 +18,6 @@
 // Cart
 "cart.title" = "CART";
 "cart.total" = "TOTAL";
+
+// Drinks
+"drinks.title" = "DRINKS";
