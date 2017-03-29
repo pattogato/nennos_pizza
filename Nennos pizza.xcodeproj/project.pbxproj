@@ -47,6 +47,7 @@
 		B1F7C5131E8BF396009F7662 /* DrinksDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5121E8BF396009F7662 /* DrinksDataProvider.swift */; };
 		B1F7C5151E8BF3A2009F7662 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5141E8BF3A2009F7662 /* DrinksViewController.swift */; };
 		B1F7C5191E8BF673009F7662 /* SimpleListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5181E8BF673009F7662 /* SimpleListTableViewCell.swift */; };
+		B1F7C51F1E8C38C3009F7662 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C51E1E8C38C3009F7662 /* NetworkModels.swift */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		B1F7C5121E8BF396009F7662 /* DrinksDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrinksDataProvider.swift; path = Dataprovider/DrinksDataProvider.swift; sourceTree = "<group>"; };
 		B1F7C5141E8BF3A2009F7662 /* DrinksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		B1F7C5181E8BF673009F7662 /* SimpleListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleListTableViewCell.swift; sourceTree = "<group>"; };
+		B1F7C51E1E8C38C3009F7662 /* NetworkModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -220,6 +222,8 @@
 		B109DF631E86FB0A00D68787 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B1F7C51A1E8C37D4009F7662 /* Models */,
+				B1F7C51B1E8C37D4009F7662 /* Services */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -340,6 +344,21 @@
 				B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */,
 			);
 			path = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		B1F7C51A1E8C37D4009F7662 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1F7C51E1E8C38C3009F7662 /* NetworkModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B1F7C51B1E8C37D4009F7662 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,6 +599,7 @@
 				B1F7C5091E8BE448009F7662 /* CartViewController.swift in Sources */,
 				B109DF411E86F6E100D68787 /* AppDelegate.swift in Sources */,
 				B1F7C5191E8BF673009F7662 /* SimpleListTableViewCell.swift in Sources */,
+				B1F7C51F1E8C38C3009F7662 /* NetworkModels.swift in Sources */,
 				B1F7C4FD1E8AC4A0009F7662 /* AlphaDisablaButton.swift in Sources */,
 				B109DF7B1E86FF6300D68787 /* MenuViewController.swift in Sources */,
 			);

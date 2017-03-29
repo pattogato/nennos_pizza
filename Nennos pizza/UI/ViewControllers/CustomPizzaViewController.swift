@@ -116,6 +116,7 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
                        y: 0,
                        width: tableView.frame.width,
                        height: Constants.headerHeight))
+            view.backgroundColor = .white
             
             let label = UILabel()
             label.text = Constants.headerTitle
