@@ -20,6 +20,9 @@ target 'Nennos pizza' do
     pod 'Swinject'
     pod 'SwinjectStoryboard'
     pod 'SnapKit'
+    # Asynchronousity handling
+    pod 'PromiseKit'
+    pod 'PromiseKit/Alamofire' # Promisekit extension for alamofire
     
   target 'Nennos pizzaTests' do
     inherit! :search_paths
