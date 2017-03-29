@@ -27,7 +27,7 @@ final class ApplicationRouter: ApplicationRouterProtocol {
     }
     
     func start() {
-        showViewController(ofType: .menu)
+        showViewController(ofType: .mainNavigation)
     }
     
     func showViewController(ofType type: ViewControllers) {

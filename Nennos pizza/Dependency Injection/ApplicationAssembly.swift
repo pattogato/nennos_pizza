@@ -61,13 +61,15 @@ enum Storyboards {
     case menu
     case cart
     case create
+    case main
     
     static func all() -> [Storyboards] {
         return [
             launchScreen,
             menu,
             cart,
-            create
+            create,
+            main
         ]
     }
     
@@ -77,6 +79,7 @@ enum Storyboards {
         case .menu: return "Menu"
         case .cart: return "Cart"
         case .create: return "Create"
+        case .main: return "Main"
         }
     }
 }
@@ -84,7 +87,7 @@ enum Storyboards {
 enum ViewControllers {
     case customPizza
     case menu
-    
+    case mainNavigation
     
     var storyboard: Storyboards {
         switch self {
@@ -92,6 +95,8 @@ enum ViewControllers {
             return .create
         case .menu:
             return .menu
+        case .mainNavigation:
+            return .main
         }
     }
     
@@ -99,6 +104,7 @@ enum ViewControllers {
         switch self {
         case .customPizza: return "CustomPizzaViewController"
         case .menu: return "MenuViewController"
+        case .mainNavigation: return "MainNavigationController"
         }
     }
 }

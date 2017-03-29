@@ -36,12 +36,3 @@ struct Fonts {
     
 }
 
-//static func initialUISetup() {
-//    self.setupNavigationBarAppearance()
-//}
-//
-//private static func setupNavigationBarAppearance() {
-//    UINavigationBar.appearance().tintColor = Colors.red
-//}
-
-

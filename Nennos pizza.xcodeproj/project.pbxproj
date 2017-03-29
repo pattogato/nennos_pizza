@@ -38,6 +38,8 @@
 		B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */; };
 		B1F7C5011E8BB5C7009F7662 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */; };
 		B1F7C5031E8BB6F3009F7662 /* AddToCartUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */; };
+		B1F7C5051E8BD5A4009F7662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F7C5041E8BD5A4009F7662 /* Main.storyboard */; };
+		B1F7C5071E8BD8D2009F7662 /* StyledNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,8 @@
 		B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuDataProvider.swift; path = Dataprovider/MenuDataProvider.swift; sourceTree = "<group>"; };
 		B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToCartUIButton.swift; sourceTree = "<group>"; };
+		B1F7C5041E8BD5A4009F7662 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationViewController.swift; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +230,7 @@
 				B109DF681E86FBA300D68787 /* Menu.storyboard */,
 				B109DF6A1E86FBAB00D68787 /* Cart.storyboard */,
 				B109DF6C1E86FBB100D68787 /* Create.storyboard */,
+				B1F7C5041E8BD5A4009F7662 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			children = (
 				B109DF7A1E86FF6300D68787 /* MenuViewController.swift */,
 				B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */,
+				B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */,
 				B109DF851E872EE300D68787 /* SF-UI-Display-Regular.otf in Resources */,
 				B109DF731E86FDB100D68787 /* Localizable.strings in Resources */,
+				B1F7C5051E8BD5A4009F7662 /* Main.storyboard in Resources */,
 				B109DF481E86F6E100D68787 /* Assets.xcassets in Resources */,
 				B109DF6B1E86FBAB00D68787 /* Cart.storyboard in Resources */,
 				B109DF6D1E86FBB100D68787 /* Create.storyboard in Resources */,
@@ -529,6 +536,7 @@
 				B109DF671E86FB0A00D68787 /* BaseModel.swift in Sources */,
 				B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */,
 				B15211881E8A4BAF0042119E /* DataprovidersAssembly.swift in Sources */,
+				B1F7C5071E8BD8D2009F7662 /* StyledNavigationViewController.swift in Sources */,
 				B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */,
 				B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */,
 				B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */,
