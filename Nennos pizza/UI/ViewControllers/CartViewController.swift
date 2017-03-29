@@ -32,6 +32,10 @@ class CartViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "cart.title".localized
     }
+    
+    @IBAction func didTapCheckoutButton(_ sender: Any) {
+        print("check")
+    }
 
 }
 

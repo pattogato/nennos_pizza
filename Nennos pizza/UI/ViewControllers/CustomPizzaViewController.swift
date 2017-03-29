@@ -40,6 +40,9 @@ class CustomPizzaViewController: UIViewController {
         dataProvider.delegate = self
         
         setupAddToCartButton(priceString: dataProvider.getSumPrice().priceString)
+        
+        // TODO: Show pizza title on open
+        self.title = "custom.create.title".localized
     }
     
     func setupAddToCartButton(priceString: String) {

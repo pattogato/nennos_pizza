@@ -23,6 +23,7 @@ final class ManagersAssembly: Assembly {
             return ApplicationRouter(window: resolver.resolve(UIWindow.self)!,
                                      storyboards: storyboards)
         }.inObjectScope(.container)
+    
     }
     
     

@@ -9,6 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-UI-Display-Bold.otf">
+            <string>SFUIDisplay-Bold</string>
+        </array>
         <array key="SF-UI-Display-Regular.otf">
             <string>SFUIDisplay-Regular</string>
         </array>
@@ -27,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-dX-ezF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="44" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -95,12 +98,29 @@
                                     <outlet property="delegate" destination="AYN-cb-CZ8" id="AdS-0F-zAK"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Huv-oW-Ijs" customClass="AlphaDisableButton" customModule="Nennos_pizza" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.30196078430000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="01w-lg-Wf9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="16"/>
+                                <state key="normal" title="CHECKOUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCheckoutButton:" destination="AYN-cb-CZ8" eventType="touchUpInside" id="NIl-og-ED6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Lw2-dX-ezF" secondAttribute="trailing" id="2Zo-OL-H80"/>
-                            <constraint firstItem="7GC-2b-7Tm" firstAttribute="top" secondItem="Lw2-dX-ezF" secondAttribute="bottom" id="GO1-8W-dzz"/>
+                            <constraint firstAttribute="trailing" secondItem="Huv-oW-Ijs" secondAttribute="trailing" id="Ii2-O1-THW"/>
+                            <constraint firstItem="Huv-oW-Ijs" firstAttribute="top" secondItem="Lw2-dX-ezF" secondAttribute="bottom" id="KC2-Mh-9UC"/>
+                            <constraint firstItem="Huv-oW-Ijs" firstAttribute="leading" secondItem="wL4-wJ-j1c" secondAttribute="leading" id="Zxz-ZD-phq"/>
                             <constraint firstItem="Lw2-dX-ezF" firstAttribute="leading" secondItem="wL4-wJ-j1c" secondAttribute="leading" id="t9W-NK-Lfi"/>
+                            <constraint firstItem="7GC-2b-7Tm" firstAttribute="top" secondItem="Huv-oW-Ijs" secondAttribute="bottom" id="tgP-kE-OQb"/>
                             <constraint firstItem="Lw2-dX-ezF" firstAttribute="top" secondItem="Hrh-7I-vC7" secondAttribute="bottom" id="uQm-n9-5LI"/>
                         </constraints>
                     </view>
