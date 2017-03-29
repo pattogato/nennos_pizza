@@ -44,14 +44,20 @@ final class ApplicationAssembly: Assembly {
     
     private func registerViewControllers(container: Container) {
         
+        // Custom pizza viewcontroller
         container.storyboardInitCompleted(CustomPizzaViewController.self) { r, c in
             c.dataProvider = r.resolve(CustomPizzaDataProviderProtocol.self)
         }
         
+        // Menu viewcontroller
         container.storyboardInitCompleted(MenuViewController.self) { r, c in
             c.dataProvider = r.resolve(MenuDataProviderProtocol.self)
         }
         
+        // Cart viewcontroller
+        container.storyboardInitCompleted(CartViewController.self) { r, c in
+            c.dataProvider = r.resolve(CartDataProviderProtocol.self)
+        }
     }
     
 }

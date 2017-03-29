@@ -8,6 +8,8 @@
 
 import UIKit
 
+// TODO: CEll delegate with cart button touch
+
 class MenuTableViewCell: UITableViewCell {
 
     @IBOutlet weak var pizzaImageView: UIImageView!

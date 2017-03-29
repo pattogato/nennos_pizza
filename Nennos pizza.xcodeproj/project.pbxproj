@@ -40,6 +40,9 @@
 		B1F7C5031E8BB6F3009F7662 /* AddToCartUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */; };
 		B1F7C5051E8BD5A4009F7662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1F7C5041E8BD5A4009F7662 /* Main.storyboard */; };
 		B1F7C5071E8BD8D2009F7662 /* StyledNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */; };
+		B1F7C5091E8BE448009F7662 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5081E8BE448009F7662 /* CartViewController.swift */; };
+		B1F7C50B1E8BE45C009F7662 /* CartDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C50A1E8BE45C009F7662 /* CartDataProvider.swift */; };
+		B1F7C50D1E8BE7EC009F7662 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C50C1E8BE7EC009F7662 /* CartTableViewCell.swift */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +99,9 @@
 		B1F7C5021E8BB6F3009F7662 /* AddToCartUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToCartUIButton.swift; sourceTree = "<group>"; };
 		B1F7C5041E8BD5A4009F7662 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationViewController.swift; sourceTree = "<group>"; };
+		B1F7C5081E8BE448009F7662 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		B1F7C50A1E8BE45C009F7662 /* CartDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartDataProvider.swift; path = Dataprovider/CartDataProvider.swift; sourceTree = "<group>"; };
+		B1F7C50C1E8BE7EC009F7662 /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -241,6 +247,7 @@
 				B109DF7A1E86FF6300D68787 /* MenuViewController.swift */,
 				B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */,
 				B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */,
+				B1F7C5081E8BE448009F7662 /* CartViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -250,6 +257,7 @@
 			children = (
 				B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */,
 				B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */,
+				B1F7C50A1E8BE45C009F7662 /* CartDataProvider.swift */,
 			);
 			name = Dataproviders;
 			sourceTree = "<group>";
@@ -296,6 +304,7 @@
 			children = (
 				B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */,
 				B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */,
+				B1F7C50C1E8BE7EC009F7662 /* CartTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -537,6 +546,7 @@
 				B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */,
 				B15211881E8A4BAF0042119E /* DataprovidersAssembly.swift in Sources */,
 				B1F7C5071E8BD8D2009F7662 /* StyledNavigationViewController.swift in Sources */,
+				B1F7C50B1E8BE45C009F7662 /* CartDataProvider.swift in Sources */,
 				B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */,
 				B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */,
 				B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */,
@@ -547,10 +557,12 @@
 				B1F7C5031E8BB6F3009F7662 /* AddToCartUIButton.swift in Sources */,
 				B15211801E8A4B2D0042119E /* ApplicationRouter.swift in Sources */,
 				B112D3801E88F7C60087FE10 /* IngredientTableViewCell.swift in Sources */,
+				B1F7C50D1E8BE7EC009F7662 /* CartTableViewCell.swift in Sources */,
 				B1F7C5011E8BB5C7009F7662 /* MenuTableViewCell.swift in Sources */,
 				B15211841E8A4B970042119E /* ManagersAssembly.swift in Sources */,
 				B15211821E8A4B8E0042119E /* ServicesAssembly.swift in Sources */,
 				B109DF7E1E87044000D68787 /* Stylesheet.swift in Sources */,
+				B1F7C5091E8BE448009F7662 /* CartViewController.swift in Sources */,
 				B109DF411E86F6E100D68787 /* AppDelegate.swift in Sources */,
 				B1F7C4FD1E8AC4A0009F7662 /* AlphaDisablaButton.swift in Sources */,
 				B109DF7B1E86FF6300D68787 /* MenuViewController.swift in Sources */,

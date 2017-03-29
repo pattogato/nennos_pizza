@@ -8,11 +8,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Cart-->
         <scene sceneID="Iva-CD-cux">
             <objects>
-                <viewController storyboardIdentifier="CartViewController" id="AYN-cb-CZ8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartViewController" automaticallyAdjustsScrollViewInsets="NO" id="AYN-cb-CZ8" customClass="CartViewController" customModule="Nennos_pizza" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hrh-7I-vC7"/>
                         <viewControllerLayoutGuide type="bottom" id="7GC-2b-7Tm"/>
@@ -21,9 +26,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-dX-ezF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lw2-dX-ezF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="44" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" id="E7e-ZX-Da2" customClass="CartTableViewCell" customModule="Nennos_pizza" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7e-ZX-Da2" id="Ykn-4S-R1M">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-mZ-tT2">
+                                                    <rect key="frame" x="322.5" y="12" width="40.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3m-13-qSJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="43" id="DiT-xh-bhy"/>
+                                                    </constraints>
+                                                    <color key="tintColor" red="0.88235294119999996" green="0.30196078430000001" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" image="ic_delete"/>
+                                                    <connections>
+                                                        <action selector="didTapDeleteButton:" destination="E7e-ZX-Da2" eventType="touchUpInside" id="cE4-ob-W6u"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqc-Ea-bql">
+                                                    <rect key="frame" x="43" y="12" width="40.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysc-Ey-4UN">
+                                                    <rect key="frame" x="43" y="43.5" width="332" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.78431372549019607" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="S4t-m1-QTn"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ysc-Ey-4UN" secondAttribute="bottom" id="0b0-Cm-Gi9"/>
+                                                <constraint firstAttribute="trailing" secondItem="OYn-mZ-tT2" secondAttribute="trailing" constant="12" id="144-vN-THu"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ysc-Ey-4UN" secondAttribute="trailing" id="A3j-wB-bt4"/>
+                                                <constraint firstItem="Zqc-Ea-bql" firstAttribute="leading" secondItem="L3m-13-qSJ" secondAttribute="trailing" id="A8k-Qp-rKA"/>
+                                                <constraint firstAttribute="bottom" secondItem="L3m-13-qSJ" secondAttribute="bottom" id="Enf-dq-lea"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zqc-Ea-bql" secondAttribute="bottom" constant="12" id="HLw-JP-82e"/>
+                                                <constraint firstItem="L3m-13-qSJ" firstAttribute="leading" secondItem="Ykn-4S-R1M" secondAttribute="leading" id="Hp7-G3-LUe"/>
+                                                <constraint firstItem="OYn-mZ-tT2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Zqc-Ea-bql" secondAttribute="trailing" constant="8" id="WIC-kf-O9l"/>
+                                                <constraint firstItem="Ysc-Ey-4UN" firstAttribute="leading" secondItem="L3m-13-qSJ" secondAttribute="trailing" id="cpa-Ce-Rwd"/>
+                                                <constraint firstAttribute="bottom" secondItem="OYn-mZ-tT2" secondAttribute="bottom" constant="12" id="diz-Zh-4R2"/>
+                                                <constraint firstItem="L3m-13-qSJ" firstAttribute="top" secondItem="Ykn-4S-R1M" secondAttribute="top" id="xad-2W-TNV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="L3m-13-qSJ" id="k49-Tp-B6o"/>
+                                            <outlet property="nameLabel" destination="Zqc-Ea-bql" id="h3e-5m-WTu"/>
+                                            <outlet property="priceLabel" destination="OYn-mZ-tT2" id="AoB-0n-zOM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="AYN-cb-CZ8" id="eHw-vN-kJf"/>
+                                    <outlet property="delegate" destination="AYN-cb-CZ8" id="AdS-0F-zAK"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -35,6 +105,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="SLZ-SF-Mnd">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pG6-5A-WPe"/>
                         <barButtonItem key="rightBarButtonItem" image="ic_drinks" id="LEy-RD-dIE">
                             <connections>
                                 <segue destination="bfG-hx-1Pe" kind="show" id="fZB-5F-4Ng"/>
@@ -42,10 +113,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="Lw2-dX-ezF" id="lRW-g5-ngD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Asi-Dc-Tf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="27"/>
+            <point key="canvasLocation" x="60" y="26.53673163418291"/>
         </scene>
         <!--Drinks-->
         <scene sceneID="JyU-t0-DV5">
@@ -80,6 +154,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_delete" width="17" height="17"/>
         <image name="ic_drinks" width="24" height="24"/>
     </resources>
 </document>

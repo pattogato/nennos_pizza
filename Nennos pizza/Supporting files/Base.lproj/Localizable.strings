@@ -14,3 +14,7 @@
 
 // Notifications
 "notification.added.to.cart" = "ADDED TO CART";
+
+// Cart
+"cart.title" = "CART";
+"cart.total" = "TOTAL";

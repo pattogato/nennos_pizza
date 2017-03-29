@@ -20,6 +20,10 @@ final class  DataprovidersAssembly: Assembly {
         container.register(MenuDataProviderProtocol.self) { r in
             return MockedMenuDataProvider()
         }
+        
+        container.register(CartDataProviderProtocol.self) { r in
+            return MockedCartDataProvider()
+        }
     }
     
 }

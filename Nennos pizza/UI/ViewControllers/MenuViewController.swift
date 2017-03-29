@@ -36,9 +36,10 @@ class MenuViewController: UIViewController {
         if let customPizzaVC = segue.destination as? CustomPizzaViewController {
             // Open custom screen from cell tap
             if let indexPath = sender as? IndexPath {
-                
+                // TODO: Complete
             } else if let barButton = sender as? UIBarButtonItem {
                 // Open create pizza screen from bar button tap
+                // TODO: Complete
             }
         }
     }

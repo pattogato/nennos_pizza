@@ -17,5 +17,6 @@ class StyledNavigationViewController: UINavigationController {
             NSForegroundColorAttributeName : Colors.red,
             NSFontAttributeName : Fonts.sfDisplayHeavy(size: 17.0)]
         self.navigationBar.tintColor = Colors.red
+        self.navigationBar.backgroundColor = .white
     }
 }
