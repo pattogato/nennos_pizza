@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="178" id="7bC-7z-hT7" customClass="MenuTableViewCell" customModule="Nennos_pizza" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="178" id="7bC-7z-hT7" customClass="MenuTableViewCell" customModule="Nennos_pizza" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="178"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7bC-7z-hT7" id="uwY-KK-XWU">
@@ -125,30 +125,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Nennos pizza" id="VW5-K9-YKD">
+                        <barButtonItem key="backBarButtonItem" title=" " id="jgT-t4-OLz"/>
                         <barButtonItem key="leftBarButtonItem" image="ic_cart_navbar" style="plain" id="ClC-pM-1wo">
                             <connections>
-                                <segue destination="Ywh-uZ-dZy" kind="presentation" id="xkJ-e6-hyI"/>
+                                <segue destination="Ywh-uZ-dZy" kind="show" id="xkJ-e6-hyI"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AsP-D6-VTd">
                             <connections>
-                                <segue destination="ph4-7R-Mw8" kind="presentation" id="5FU-Ym-MDW"/>
+                                <action selector="didTouchCreateBarButton:" destination="JFb-ci-f32" id="OXy-4T-2Dd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="Nrn-EW-M1N" kind="show" identifier="toCustomPizzaSegue" id="W36-ea-cfl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uga-RD-jWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="104.7976011994003"/>
-        </scene>
-        <!--CustomPizzaViewController-->
-        <scene sceneID="K6n-if-TKB">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Create" referencedIdentifier="CustomPizzaViewController" id="ph4-7R-Mw8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yRl-HD-gMI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1695" y="82"/>
         </scene>
         <!--CartViewController-->
         <scene sceneID="Vlz-S2-TUu">
@@ -156,7 +152,15 @@
                 <viewControllerPlaceholder storyboardName="Cart" referencedIdentifier="CartViewController" id="Ywh-uZ-dZy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffN-Lx-9aq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="125"/>
+            <point key="canvasLocation" x="1732" y="53"/>
+        </scene>
+        <!--CustomPizzaViewController-->
+        <scene sceneID="qXU-23-15J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Create" referencedIdentifier="CustomPizzaViewController" id="Nrn-EW-M1N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWE-u9-BUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="148"/>
         </scene>
     </scenes>
     <resources>

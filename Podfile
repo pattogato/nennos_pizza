@@ -17,6 +17,7 @@ target 'Nennos pizza' do
     # Dependency injection
     pod 'Swinject'
     pod 'SwinjectStoryboard'
+    pod 'SnapKit'
     
   target 'Nennos pizzaTests' do
     inherit! :search_paths

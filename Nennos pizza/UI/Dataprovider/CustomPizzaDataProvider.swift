@@ -25,6 +25,9 @@ protocol CustomPizzaDataProviderDelegate: class {
     func refreshSumPrice(price: Double)
 }
 
+/**
+ Returns mocked data for testing
+ */
 final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtocol {
     
     weak var delegate: CustomPizzaDataProviderDelegate?
@@ -38,7 +41,6 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
     func modelFor(indexPath: IndexPath) -> IngredientViewModelProtocol {
         return IngredientViewModel(
             name: "model \(indexPath.row)",
-            currency: "$",
             price: Double(indexPath.row))
     }
     
@@ -74,6 +76,5 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
 
 struct IngredientViewModel: IngredientViewModelProtocol {
     var name: String
-    var currency: String
     var price: Double
 }

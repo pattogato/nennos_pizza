@@ -14,6 +14,9 @@ protocol MenuDataProviderProtocol {
     func addItemToCart(at indexPath: IndexPath)
 }
 
+/**
+ Returns dummy data for testing
+ */
 final class MockedMenuDataProvider: MenuDataProviderProtocol {
     
     private struct MenuItemViewModel: MenuItemViewModelProtocol {

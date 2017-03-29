@@ -8,11 +8,11 @@
 
 import UIKit
 import AlamofireImage
+import SnapKit
 
 protocol IngredientViewModelProtocol {
     var name: String { get }
     var price: Double { get }
-    var currency: String { get }
 }
 
 class CustomPizzaViewController: UIViewController {
@@ -24,6 +24,8 @@ class CustomPizzaViewController: UIViewController {
     
     fileprivate struct Constants {
         static let ingredientCellIdentifier = "IngredientTableViewCell"
+        static let headerHeight: CGFloat = 77.0
+        static let headerTitle = "Ingredients"
     }
     
     override func viewDidLoad() {
@@ -91,6 +93,42 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         dataProvider.deSelecItemAt(indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return Constants.headerHeight
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return createHeaderView(section: section, tableView: tableView)
+    }
+    
+    private func createHeaderView(section: Int, tableView: UITableView) -> UIView? {
+        if section == 0 {
+            let view = UIView(frame:
+                CGRect(x: 0,
+                       y: 0,
+                       width: tableView.frame.width,
+                       height: Constants.headerHeight))
+            
+            let label = UILabel()
+            label.text = Constants.headerTitle
+            view.addSubview(label)
+            
+            label.snp.makeConstraints { (make) in
+                make.leading.equalTo(view.snp.leading).offset(12)
+                make.trailing.equalTo(view.snp.trailing).offset(12)
+                make.centerY.equalTo(view.snp.centerY)
+            }
+            
+            label.textColor = Colors.brown
+            label.font = Fonts.sfDisplayBold(size: 24)
+            return view
+        }
+        return nil
     }
 }
 

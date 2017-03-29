@@ -13,7 +13,7 @@
         <scene sceneID="KO5-nV-fLL">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigationController" id="5uW-tr-yX6" customClass="StyledNavigationViewController" customModule="Nennos_pizza" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yHV-PP-adC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yHV-PP-adC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

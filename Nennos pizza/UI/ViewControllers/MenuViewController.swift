@@ -20,6 +20,7 @@ class MenuViewController: UIViewController {
     fileprivate struct Constants {
         static let menuCellIdentifier = "MenuTableViewCell"
         static let rowHeight: CGFloat = 178.0
+        static let createSegueIdentifier = "toCustomPizzaSegue"
     }
     
     var dataProvider: MenuDataProviderProtocol!
@@ -30,23 +31,22 @@ class MenuViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "menu.title".localized
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let customPizzaVC = segue.destination as? CustomPizzaViewController {
+            // Open custom screen from cell tap
+            if let indexPath = sender as? IndexPath {
+                
+            } else if let barButton = sender as? UIBarButtonItem {
+                // Open create pizza screen from bar button tap
+            }
+        }
     }
-    */
     
+    // IBActions
+    @IBAction func didTouchCreateBarButton(_ sender: Any) {
+        self.performSegue(withIdentifier: Constants.createSegueIdentifier, sender: sender)
+    }
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -71,6 +71,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: Constants.createSegueIdentifier, sender: indexPath)
     }
     
 }

@@ -7,6 +7,7 @@ PODS:
   - Realm/Headers (1.1.0)
   - RealmSwift (1.1.0):
     - Realm (= 1.1.0)
+  - SnapKit (3.2.0)
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.4.0)
   - AlamofireImage
   - RealmSwift (~> 1.1.0)
+  - SnapKit
   - Swinject
   - SwinjectStoryboard
   - Whisper (~> 4.0.0)
@@ -25,10 +27,11 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   Whisper: 08be92623311f8e53201e62e17f6d7b9599a4714
 
-PODFILE CHECKSUM: 344c5459de8724cd4b50565e642e124bfafacab5
+PODFILE CHECKSUM: 31ef80175a4c8cc7f0c5d1fd230822dcfb7d8d85
 
 COCOAPODS: 1.2.0

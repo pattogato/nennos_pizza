@@ -17,7 +17,15 @@ class IngredientTableViewCell: UITableViewCell {
     
     func setupUI(viewModel: IngredientViewModelProtocol) {
         self.ingredientNameLabel.text = viewModel.name
-        self.priceLabel.text = viewModel.currency + " " + "\(viewModel.price)"
+        self.priceLabel.text = viewModel.price.priceString
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.priceLabel.font = Fonts.sfDisplayRegular(size: 17)
+        self.priceLabel.textColor = Colors.brown
+        self.ingredientNameLabel.font = Fonts.sfDisplayRegular(size: 17)
+        self.ingredientNameLabel.textColor = Colors.brown
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
