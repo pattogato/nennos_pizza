@@ -9,24 +9,36 @@
 import Alamofire
 import AlamofireObjectMapper
 import PromiseKit
+import ObjectMapper
 
 protocol ServicesProtocol {
     
+}
+
+enum ServiceError: Error {
+    case unknownError
 }
 
 final class Services: ServicesProtocol {
     
     func getIngredients() -> Promise<IngredientNetworkModel> {
         
-//        makeRequest(serviceResource: .getIngredients)?.responseObject { (response: DataResponse<IngredientNetworkModel>) in
-//            
-//            let ingredientResponse = response.result.value
-//            print(ingredientResponse)
-//        }
+        var promise: Promise<IngredientNetworkModel> = Promise {
+            fulfill, reject in
+            
+            return makeRequest(serviceResource: .getIngredients)?.responseObject { (response: DataResponse<IngredientNetworkModel>) in
+                
+                if let result = response.result.value {
+                    fulfill(result)
+                } else if let error = response.result.error {
+                    reject(error)
+                } else {
+                    reject(ServiceError.unknownError)
+                }
+            }
+        }
         
-        return makeRequest(serviceResource: .getIngredients)?.responseJSON().then(execute: { (<#Any#>) -> U in
-            <#code#>
-        })
+        return promise
     }
     
     

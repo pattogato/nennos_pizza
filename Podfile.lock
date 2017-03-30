@@ -10,9 +10,6 @@ PODS:
     - PromiseKit/Foundation (= 4.1.7)
     - PromiseKit/QuartzCore (= 4.1.7)
     - PromiseKit/UIKit (= 4.1.7)
-  - PromiseKit/Alamofire (4.1.7):
-    - Alamofire (~> 4.0)
-    - PromiseKit/CorePromise
   - PromiseKit/CorePromise (4.1.7)
   - PromiseKit/Foundation (4.1.7):
     - PromiseKit/CorePromise
@@ -37,7 +34,6 @@ DEPENDENCIES:
   - AlamofireObjectMapper
   - ObjectMapper
   - PromiseKit
-  - PromiseKit/Alamofire
   - RealmSwift (~> 1.1.0)
   - SnapKit
   - Swinject
@@ -57,6 +53,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   Whisper: 08be92623311f8e53201e62e17f6d7b9599a4714
 
-PODFILE CHECKSUM: e2c25923e0cebc73cdd20833c25d7ccc4375359d
+PODFILE CHECKSUM: a242938d1941ccdd64ca4d9eeada9393fb2f6791
 
 COCOAPODS: 1.2.0
