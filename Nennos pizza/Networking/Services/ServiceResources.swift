@@ -42,7 +42,7 @@ enum ServiceResource {
         }
     }
     
-    var httpMethod: HTTPMethod {
+    var httpMethod: HTTPMethod {
         switch self {
         case .getIngredients, .getDrinks, .getPizzas:
             return .get

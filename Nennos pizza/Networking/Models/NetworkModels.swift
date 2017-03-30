@@ -87,7 +87,7 @@ final class PizzaListNetworkModel: Mappable {
 
 final class PizzaNetworkModel: BaseNetworkModel {
     
-    var ingredients: [IngredientNetworkModel]?
+    var ingredients: [Int]?
     var imageUrl: String?
     
     override func mapping(map: Map) {

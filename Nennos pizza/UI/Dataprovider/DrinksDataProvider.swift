@@ -14,12 +14,12 @@ protocol DrinksDataProviderProtocol {
     func addItemToCartAt(indexPath: IndexPath)
 }
 
+struct DrinkViewModel: DrinkViewModelProtocol {
+    var name: String
+    var price: Double
+}
+
 final class MockedDrinksDataProvider: DrinksDataProviderProtocol {
-    
-    private struct DrinkViewModel: DrinkViewModelProtocol {
-        var name: String
-        var price: Double
-    }
     
     func numberOfRows() -> Int {
         return 6

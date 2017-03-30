@@ -12,7 +12,7 @@ import PromiseKit
 import ObjectMapper
 
 protocol ServicesProtocol {
-    
+    func getIngredients() -> Promise<[IngredientNetworkModel]>
 }
 
 enum ServiceError: Error {
