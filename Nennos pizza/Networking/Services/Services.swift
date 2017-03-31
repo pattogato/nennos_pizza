@@ -21,12 +21,12 @@ enum ServiceError: Error {
 
 final class Services: ServicesProtocol {
     
-    func getIngredients() -> Promise<IngredientNetworkModel> {
+    func getIngredients() -> Promise<[IngredientNetworkModel]> {
         
-        var promise: Promise<IngredientNetworkModel> = Promise {
+        let promise: Promise<[IngredientNetworkModel]> = Promise {
             fulfill, reject in
             
-            return makeRequest(serviceResource: .getIngredients)?.responseObject { (response: DataResponse<IngredientNetworkModel>) in
+            return makeRequest(serviceResource: .getIngredients)?.responseArray { (response: DataResponse<[IngredientNetworkModel]>) in
                 
                 if let result = response.result.value {
                     fulfill(result)

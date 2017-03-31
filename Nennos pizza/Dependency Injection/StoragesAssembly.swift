@@ -12,11 +12,11 @@ import Swinject
 final class StoragesAssembly: Assembly {
     
     func assemble(container: Container) {
-//        container.register(ConfigStorageProtocol.self) { r in
-//            return ConfigStorage(
-//                dalHelper: r.resolve(DALHelperProtocol.self)!
-//            )
-//        }
+        // Resolve ingredient storage with inMemory implementation
+        container.register(IngredientStorageProtocol.self) { r in
+            return InMemoryIngredientStorage()
+        }
+        
     }
     
 }

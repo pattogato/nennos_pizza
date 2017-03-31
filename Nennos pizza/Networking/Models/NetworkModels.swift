@@ -13,6 +13,16 @@ import ObjectMapper
  These classes are responsible to map the JSON files from the network to local object models
  */
 
+//class ListNetworkModel<T: Mappable>: Mappable {
+//    
+//    var elements: [T]?
+//    
+//    func mapping(map: Map) {
+//        
+//    }
+//    
+//}
+
 /**
  Base network superclass only with name
  */
@@ -72,6 +82,9 @@ final class IngredientNetworkModel: IdentifiedNetworkModel {
     }
 }
 
+/**
+ Pizza's list object mapper
+ */
 final class PizzaListNetworkModel: Mappable {
     
     var basePrice: Double?
@@ -85,6 +98,9 @@ final class PizzaListNetworkModel: Mappable {
     init?(map: Map) { }
 }
 
+/**
+ Pizza object network model
+ */
 final class PizzaNetworkModel: BaseNetworkModel {
     
     var ingredients: [Int]?
