@@ -13,23 +13,19 @@ protocol IngredientStorageProtocol {
     func getIngredients() -> Promise<[IngredientModel]>
 }
 
-final class InMemoryIngredientStorage: IngredientStorageProtocol {
-    
-    let service: ServicesProtocol
-    
-    init(service: ServicesProtocol) {
-        self.service = service
-    }
-    
-    private var ingredients: [IngredientModel]? = nil
+final class InMemoryIngredientStorage: BaseInMemoryStorage<IngredientModel>, IngredientStorageProtocol {
     
     func getIngredients() -> Promise<[IngredientModel]> {
-        guard let ingredients = self.ingredients else {
+        return getElements()
+    }
+    
+    override func getElements() -> Promise<[IngredientModel]> {
+        guard let ingredients = self.storedElements else {
             // If not loaded yet download them
             return service.getIngredients().then { ingredients -> Promise<[IngredientModel]> in
                 // Download network models and map them to stored model
                 let ingredients = ingredients.map({ return IngredientModel(networkModel: $0) })
-                self.ingredients = ingredients
+                self.storedElements = ingredients
                 return Promise(value: ingredients)
             }
         }

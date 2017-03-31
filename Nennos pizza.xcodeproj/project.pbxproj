@@ -31,6 +31,8 @@
 		B15211881E8A4BAF0042119E /* DataprovidersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15211871E8A4BAF0042119E /* DataprovidersAssembly.swift */; };
 		B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15211891E8A4F1D0042119E /* DIManager.swift */; };
 		B1921E2D1E8E516600043C5B /* PizzaStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E2C1E8E516600043C5B /* PizzaStorage.swift */; };
+		B1921E311E8E571800043C5B /* DrinkStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E301E8E571800043C5B /* DrinkStorage.swift */; };
+		B1921E351E8E57B100043C5B /* BaseInMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E341E8E57B100043C5B /* BaseInMemoryStorage.swift */; };
 		B1AF23751E8DA737004E52B0 /* IngredientStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */; };
 		B1AF237B1E8DA880004E52B0 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF237A1E8DA880004E52B0 /* IngredientModel.swift */; };
 		B1AF237D1E8DA886004E52B0 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF237C1E8DA886004E52B0 /* DrinkModel.swift */; };
@@ -102,6 +104,8 @@
 		B15211871E8A4BAF0042119E /* DataprovidersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataprovidersAssembly.swift; sourceTree = "<group>"; };
 		B15211891E8A4F1D0042119E /* DIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
 		B1921E2C1E8E516600043C5B /* PizzaStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaStorage.swift; sourceTree = "<group>"; };
+		B1921E301E8E571800043C5B /* DrinkStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkStorage.swift; sourceTree = "<group>"; };
+		B1921E341E8E57B100043C5B /* BaseInMemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInMemoryStorage.swift; sourceTree = "<group>"; };
 		B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientStorage.swift; sourceTree = "<group>"; };
 		B1AF237A1E8DA880004E52B0 /* IngredientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		B1AF237C1E8DA886004E52B0 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
@@ -349,6 +353,8 @@
 				B1AF23791E8DA877004E52B0 /* Models */,
 				B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */,
 				B1921E2C1E8E516600043C5B /* PizzaStorage.swift */,
+				B1921E301E8E571800043C5B /* DrinkStorage.swift */,
+				B1921E341E8E57B100043C5B /* BaseInMemoryStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -614,12 +620,14 @@
 				B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */,
 				B1AF237B1E8DA880004E52B0 /* IngredientModel.swift in Sources */,
 				B1AF23751E8DA737004E52B0 /* IngredientStorage.swift in Sources */,
+				B1921E351E8E57B100043C5B /* BaseInMemoryStorage.swift in Sources */,
 				B15211861E8A4BA70042119E /* StoragesAssembly.swift in Sources */,
 				B109DF791E86FE1400D68787 /* Extensions.swift in Sources */,
 				B1F7C5031E8BB6F3009F7662 /* AddToCartUIButton.swift in Sources */,
 				B15211801E8A4B2D0042119E /* ApplicationRouter.swift in Sources */,
 				B1F7C5231E8C3C84009F7662 /* Services.swift in Sources */,
 				B1F7C50F1E8BF35A009F7662 /* DrinkTableViewCell.swift in Sources */,
+				B1921E311E8E571800043C5B /* DrinkStorage.swift in Sources */,
 				B1AF237F1E8DA891004E52B0 /* PizzaModel.swift in Sources */,
 				B112D3801E88F7C60087FE10 /* IngredientTableViewCell.swift in Sources */,
 				B1F7C50D1E8BE7EC009F7662 /* CartTableViewCell.swift in Sources */,

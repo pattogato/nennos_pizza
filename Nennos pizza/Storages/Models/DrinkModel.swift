@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ObjectMapper
 
-final class DrinkModel {
+final class DrinkModel  {
     
     var id: Int
     var price: Double
@@ -19,7 +20,7 @@ final class DrinkModel {
         self.price = price
         self.name = name
     }
-    
+
     convenience init(networkModel: DrinkNetworkModel) {
         self.init(id: networkModel.id ?? -1,
                   price: networkModel.price ?? 0,
