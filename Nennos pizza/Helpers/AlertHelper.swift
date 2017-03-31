@@ -10,6 +10,15 @@ import UIKit
 
 final class AlertHelper {
     
+    static func showError(from: UIViewController, error: Error, retryActionHandler: ((UIAlertAction) -> Void)?) {
+        showErrorWithRetry(title: "error.title".localized,
+                                message: error.localizedDescription,
+                                cancelTitle: "error.cancel".localized,
+                                retryTitle: "error.retry".localized,
+                                from: from,
+                                retryActionHandler: retryActionHandler)
+    }
+    
     static func showNetworkAlert(from: UIViewController, retryActionHandler: ((UIAlertAction) -> Void)?) {
         showErrorWithRetry(title: "error.title".localized,
                            message: "error.network.message".localized,

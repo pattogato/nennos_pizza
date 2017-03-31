@@ -134,6 +134,7 @@
                     <connections>
                         <outlet property="addToCartButton" destination="g5v-nr-mTX" id="9fz-xA-L0h"/>
                         <outlet property="pizzaImageView" destination="567-BM-cff" id="s5i-5w-Jte"/>
+                        <outlet property="tableView" destination="cTW-6i-mLs" id="RL7-O1-7Yl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TxR-EE-1Pw" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class IngredientModel {
+final class IngredientModel: Equatable {
     
     var id: Int
     var price: Double
@@ -26,7 +26,8 @@ final class IngredientModel {
         self.name = networkModel.name ?? ""
     }
     
-    var viewModel: IngredientViewModelProtocol {
-        return IngredientViewModel(name: self.name, price: self.price)
-    }
+}
+
+func == (lhs: IngredientModel, rhs: IngredientModel) -> Bool {
+    return lhs.id == rhs.id
 }

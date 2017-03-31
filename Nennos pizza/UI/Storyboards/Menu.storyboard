@@ -41,10 +41,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_wood" translatesAutoresizingMaskIntoConstraints="NO" id="Vqp-8a-uc3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-OI-ouz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="177.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XO-rX-oUN">
                                                     <rect key="frame" x="0.0" y="108" width="375" height="70"/>
@@ -53,7 +53,7 @@
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="list of pizza's ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ev-Jb-Z2v">
-                                                                <rect key="frame" x="12" y="41" width="147.5" height="17"/>
+                                                                <rect key="frame" x="12" y="41" width="148" height="17"/>
                                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -129,7 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Nennos pizza" id="VW5-K9-YKD">
                         <barButtonItem key="backBarButtonItem" title=" " id="jgT-t4-OLz"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_cart_navbar" style="plain" id="ClC-pM-1wo">
+                        <barButtonItem key="leftBarButtonItem" image="ic_cart_navbar" id="ClC-pM-1wo">
                             <connections>
                                 <segue destination="Ywh-uZ-dZy" kind="show" id="xkJ-e6-hyI"/>
                             </connections>

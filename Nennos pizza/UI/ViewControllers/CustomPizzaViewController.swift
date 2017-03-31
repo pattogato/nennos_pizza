@@ -16,11 +16,12 @@ protocol IngredientViewModelProtocol {
 }
 
 class CustomPizzaViewController: UIViewController {
-
+    
     var dataProvider: CustomPizzaDataProviderProtocol!
     
     @IBOutlet weak var pizzaImageView: UIImageView!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     fileprivate struct Constants {
         static let ingredientCellIdentifier = "IngredientTableViewCell"
@@ -30,39 +31,68 @@ class CustomPizzaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        if let imageUrl = dataProvider.getPizzaImageUrl() {
+        
+        dataProvider.delegate = self
+        setupData()
+    }
+    
+    private func setupData() {
+        _ = dataProvider.loadData().then { (success) -> Void in
+            if success {
+                self.tableView.reloadData()
+                self.setupUI()
+            } else {
+                // Show error with calling this method again at retry button tap
+                AlertHelper.showNetworkAlert(from: self,
+                                             retryActionHandler: { (_) in
+                                                self.setupData()
+                })
+            }
+            }.catch { (error) in
+                AlertHelper.showError(from: self,
+                                      error: error,
+                                      retryActionHandler: { (_) in
+                                        self.setupData()
+                })
+        }
+    }
+    
+    fileprivate func setupUI() {
+        // Setup pizza image
+        if dataProvider.isCreateMode {
+            pizzaImageView.image = #imageLiteral(resourceName: "im_empty_pizza")
+        } else if let imageUrl = dataProvider.getPizzaImageUrl() {
             pizzaImageView.af_setImage(
                 withURL: imageUrl,
                 placeholderImage: nil)
         }
-        dataProvider.delegate = self
         
+        self.title = dataProvider.getTitle()
         setupAddToCartButton(priceString: dataProvider.getSumPrice().priceString)
         
-        // TODO: Show pizza title on open
-        self.title = "custom.create.title".localized
     }
     
-    func setupAddToCartButton(priceString: String) {
+    fileprivate func setupAddToCartButton(priceString: String) {
         self.addToCartButton.isEnabled = dataProvider.isAddToCartButtonEnabled
         addToCartButton.setTitle(
             String(format: "custom.button.addtocart".localized, priceString),
             for: .normal)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func didTapAddToCartButton(_ sender: Any) {
         // TODO: add to cart & show cart view on tap
         print("add to cart")
-        NotificationHelper.showStatusBarMessage("notification.added.to.cart".localized, action: nil)
+        self.dismiss(animated: true) {
+            NotificationHelper.showStatusBarMessage("notification.added.to.cart".localized, action: nil)
+        }
     }
+    
     
 }
 
@@ -85,9 +115,15 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
             assertionFailure("Cell's class not set properly")
             return
         }
-        
-        cell.setupUI(viewModel: dataProvider.modelFor(indexPath: indexPath))
-        cell.setSelected(dataProvider.isModelSelected(indexPath: indexPath), animated: false)
+        do {
+            cell.setupUI(viewModel: try dataProvider.modelFor(indexPath: indexPath))
+            cell.setSelected(dataProvider.isModelSelected(indexPath: indexPath), animated: false)
+        } catch {
+            AlertHelper.showAlert(title: "error.title".localized,
+                                  message: "error.network.message".localized,
+                                  cancelTitle: "error.ok".localized,
+                                  from: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

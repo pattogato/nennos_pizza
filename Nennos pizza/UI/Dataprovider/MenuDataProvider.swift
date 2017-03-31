@@ -13,6 +13,7 @@ protocol MenuDataProviderProtocol: AsyncLoadingDataProviderProtocol {
     func numberOfRows() -> Int
     func itemAt(indexPath: IndexPath) throws -> MenuItemViewModelProtocol
     func addItemToCart(at indexPath: IndexPath)
+    func getModelAt(indexPath: IndexPath) throws -> PizzaModel
 }
 
 final class MenuDataProvider: MenuDataProviderProtocol {
@@ -20,7 +21,7 @@ final class MenuDataProvider: MenuDataProviderProtocol {
     let pizzaStorage: PizzaStorageProtocol
     let cartManager: CartManagerProtocol
     
-    private var pizzas: [MenuItemViewModelProtocol]?
+    private var pizzas: [PizzaModel]?
     
     init(pizzaStorage: PizzaStorageProtocol, cartManager: CartManagerProtocol) {
         self.pizzaStorage = pizzaStorage
@@ -29,7 +30,7 @@ final class MenuDataProvider: MenuDataProviderProtocol {
     
     func loadData() -> Promise<Bool> {
         return pizzaStorage.getPizzas().then(execute: { (pizzas) -> Promise<Bool> in
-            self.pizzas = pizzas.map({ return MenuItemViewModel(model: $0) })
+            self.pizzas = pizzas
             
             return Promise(value: true)
         })
@@ -40,6 +41,16 @@ final class MenuDataProvider: MenuDataProviderProtocol {
     }
     
     func itemAt(indexPath: IndexPath) throws -> MenuItemViewModelProtocol {
+        guard let pizzas = self.pizzas else {
+            throw DataProviderError.dataNotLoadedError
+        }
+        if indexPath.row > pizzas.count + 1 {
+            throw DataProviderError.indexOutOfBounds
+        }
+        return MenuItemViewModel(model: pizzas[indexPath.row])
+    }
+    
+    func getModelAt(indexPath: IndexPath) throws -> PizzaModel {
         guard let pizzas = self.pizzas else {
             throw DataProviderError.dataNotLoadedError
         }
@@ -74,6 +85,10 @@ final class MockedMenuDataProvider: MenuDataProviderProtocol {
                                  ingredients: arc4random() % 2 == 1 ? "Mozarella, tomato sauce, salami, pepperoni, mushroom, ricci" : "Mozarella, tomato sauce",
                                  price: Double(indexPath.row * 4),
                                  title: "Pizza #\(indexPath.row)")
+    }
+    
+    func getModelAt(indexPath: IndexPath) throws -> PizzaModel {
+        return PizzaModel(basePrice: 15, name: "Mocked pizza", ingredientIds: nil, imageUrl: nil)
     }
     
     func addItemToCart(at indexPath: IndexPath) {

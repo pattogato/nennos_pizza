@@ -15,7 +15,9 @@ final class  DataprovidersAssembly: Assembly {
     func assemble(container: Container) {
         // Custom pizza
         container.register(CustomPizzaDataProviderProtocol.self) { r in
-            return MockedCustomPizzaDataProviderProtocol()
+            return CustomPizzaDataProvider(
+                ingredientStorage: r.resolve(IngredientStorageProtocol.self)!
+            )
         }
         
         // Menu

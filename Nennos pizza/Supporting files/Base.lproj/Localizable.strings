@@ -8,6 +8,8 @@
 
 // Menu
 "menu.title" = "NENNO'S PIZZA";
+"menu.notfound" = "Pizza not found";
+"menu.notfound.message" = "Something went wrong, please refresh the list";
 
 // Custom pizza
 "custom.button.addtocart" = "ADD TO CART (%@)";
