@@ -33,6 +33,9 @@
 		B1921E2D1E8E516600043C5B /* PizzaStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E2C1E8E516600043C5B /* PizzaStorage.swift */; };
 		B1921E311E8E571800043C5B /* DrinkStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E301E8E571800043C5B /* DrinkStorage.swift */; };
 		B1921E351E8E57B100043C5B /* BaseInMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E341E8E57B100043C5B /* BaseInMemoryStorage.swift */; };
+		B1921E371E8E641700043C5B /* AsyncLoadingDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E361E8E641700043C5B /* AsyncLoadingDataProviderProtocol.swift */; };
+		B1921E391E8E69DB00043C5B /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E381E8E69DB00043C5B /* CartManager.swift */; };
+		B1921E3D1E8E6C6D00043C5B /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E3C1E8E6C6D00043C5B /* AlertHelper.swift */; };
 		B1AF23751E8DA737004E52B0 /* IngredientStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */; };
 		B1AF237B1E8DA880004E52B0 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF237A1E8DA880004E52B0 /* IngredientModel.swift */; };
 		B1AF237D1E8DA886004E52B0 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF237C1E8DA886004E52B0 /* DrinkModel.swift */; };
@@ -106,6 +109,9 @@
 		B1921E2C1E8E516600043C5B /* PizzaStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaStorage.swift; sourceTree = "<group>"; };
 		B1921E301E8E571800043C5B /* DrinkStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkStorage.swift; sourceTree = "<group>"; };
 		B1921E341E8E57B100043C5B /* BaseInMemoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInMemoryStorage.swift; sourceTree = "<group>"; };
+		B1921E361E8E641700043C5B /* AsyncLoadingDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsyncLoadingDataProviderProtocol.swift; path = Dataprovider/AsyncLoadingDataProviderProtocol.swift; sourceTree = "<group>"; };
+		B1921E381E8E69DB00043C5B /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		B1921E3C1E8E6C6D00043C5B /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientStorage.swift; sourceTree = "<group>"; };
 		B1AF237A1E8DA880004E52B0 /* IngredientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		B1AF237C1E8DA886004E52B0 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 			children = (
 				B152117F1E8A4B2D0042119E /* ApplicationRouter.swift */,
 				B15211891E8A4F1D0042119E /* DIManager.swift */,
+				B1921E381E8E69DB00043C5B /* CartManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -278,6 +285,7 @@
 		B109DF6E1E86FBC500D68787 /* Dataproviders */ = {
 			isa = PBXGroup;
 			children = (
+				B1921E361E8E641700043C5B /* AsyncLoadingDataProviderProtocol.swift */,
 				B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */,
 				B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */,
 				B1F7C50A1E8BE45C009F7662 /* CartDataProvider.swift */,
@@ -300,6 +308,7 @@
 			children = (
 				B109DF781E86FE1400D68787 /* Extensions.swift */,
 				B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */,
+				B1921E3C1E8E6C6D00043C5B /* AlertHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -614,6 +623,7 @@
 				B1F7C5071E8BD8D2009F7662 /* StyledNavigationViewController.swift in Sources */,
 				B1F7C50B1E8BE45C009F7662 /* CartDataProvider.swift in Sources */,
 				B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */,
+				B1921E3D1E8E6C6D00043C5B /* AlertHelper.swift in Sources */,
 				B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */,
 				B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */,
 				B152117C1E8A48710042119E /* ApplicationAssembly.swift in Sources */,
@@ -633,6 +643,8 @@
 				B1F7C50D1E8BE7EC009F7662 /* CartTableViewCell.swift in Sources */,
 				B1F7C5011E8BB5C7009F7662 /* MenuTableViewCell.swift in Sources */,
 				B15211841E8A4B970042119E /* ManagersAssembly.swift in Sources */,
+				B1921E391E8E69DB00043C5B /* CartManager.swift in Sources */,
+				B1921E371E8E641700043C5B /* AsyncLoadingDataProviderProtocol.swift in Sources */,
 				B15211821E8A4B8E0042119E /* ServicesAssembly.swift in Sources */,
 				B109DF7E1E87044000D68787 /* Stylesheet.swift in Sources */,
 				B1F7C5151E8BF3A2009F7662 /* DrinksViewController.swift in Sources */,

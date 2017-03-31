@@ -66,7 +66,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? MenuTableViewCell {
-            cell.setupUI(viewModel: dataProvider.itemAt(indexPath: indexPath))
+            do {
+                cell.setupUI(viewModel: try dataProvider.itemAt(indexPath: indexPath))
+            } catch {
+                
+            }
         }
     }
     

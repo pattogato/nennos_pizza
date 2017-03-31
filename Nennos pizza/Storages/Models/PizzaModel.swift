@@ -13,17 +13,20 @@ final class PizzaModel {
     var basePrice: Double
     var name: String
     var ingredientIds: [Int]?
+    var imageUrl: URL?
     
-    init(basePrice: Double, name: String, ingredientIds: [Int]?) {
+    init(basePrice: Double, name: String, ingredientIds: [Int]?, imageUrl: URL?) {
         self.basePrice = basePrice
         self.name = name
         self.ingredientIds = ingredientIds
+        self.imageUrl = imageUrl
     }
     
     init(networkModel: PizzaNetworkModel, basePrice: Double) {
         self.basePrice = basePrice
         self.name = networkModel.name ?? ""
         self.ingredientIds = networkModel.ingredients
+        self.imageUrl = URL(string: networkModel.imageUrl ?? "")
     }
     
     // TODO: Implement PizzaViewModelProtocol var
