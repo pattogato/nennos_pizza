@@ -30,6 +30,7 @@
 		B15211861E8A4BA70042119E /* StoragesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15211851E8A4BA60042119E /* StoragesAssembly.swift */; };
 		B15211881E8A4BAF0042119E /* DataprovidersAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15211871E8A4BAF0042119E /* DataprovidersAssembly.swift */; };
 		B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15211891E8A4F1D0042119E /* DIManager.swift */; };
+		B1921E2D1E8E516600043C5B /* PizzaStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1921E2C1E8E516600043C5B /* PizzaStorage.swift */; };
 		B1AF23751E8DA737004E52B0 /* IngredientStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */; };
 		B1AF237B1E8DA880004E52B0 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF237A1E8DA880004E52B0 /* IngredientModel.swift */; };
 		B1AF237D1E8DA886004E52B0 /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AF237C1E8DA886004E52B0 /* DrinkModel.swift */; };
@@ -100,6 +101,7 @@
 		B15211851E8A4BA60042119E /* StoragesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoragesAssembly.swift; sourceTree = "<group>"; };
 		B15211871E8A4BAF0042119E /* DataprovidersAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataprovidersAssembly.swift; sourceTree = "<group>"; };
 		B15211891E8A4F1D0042119E /* DIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
+		B1921E2C1E8E516600043C5B /* PizzaStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaStorage.swift; sourceTree = "<group>"; };
 		B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientStorage.swift; sourceTree = "<group>"; };
 		B1AF237A1E8DA880004E52B0 /* IngredientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		B1AF237C1E8DA886004E52B0 /* DrinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			children = (
 				B1AF23791E8DA877004E52B0 /* Models */,
 				B1AF23741E8DA737004E52B0 /* IngredientStorage.swift */,
+				B1921E2C1E8E516600043C5B /* PizzaStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				B1AF237D1E8DA886004E52B0 /* DrinkModel.swift in Sources */,
 				B1AF23811E8DA8A5004E52B0 /* CartModel.swift in Sources */,
 				B1F7C5191E8BF673009F7662 /* SimpleListTableViewCell.swift in Sources */,
+				B1921E2D1E8E516600043C5B /* PizzaStorage.swift in Sources */,
 				B1F7C51F1E8C38C3009F7662 /* NetworkModels.swift in Sources */,
 				B1F7C4FD1E8AC4A0009F7662 /* AlphaDisablaButton.swift in Sources */,
 				B109DF7B1E86FF6300D68787 /* MenuViewController.swift in Sources */,
