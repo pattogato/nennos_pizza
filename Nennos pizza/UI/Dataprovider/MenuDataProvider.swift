@@ -78,26 +78,11 @@ final class MenuDataProvider: MenuDataProviderProtocol {
     
     private func createViewModelsFrom(pizzaModels: [PizzaModel]) -> [MenuItemViewModelProtocol] {
         var retVal = [MenuItemViewModelProtocol]()
-        // Create viewmodels onlya once per loaddata
+        // Create viewmodels only once per load data
         pizzaModels.forEach({ (pizzaModel) in
-            var ingredientModelForPizza = [IngredientModel]()
-            // Get ingredients from ingredient ids
-            if let ingredientIds = pizzaModel.ingredientIds {
-                ingredientIds.forEach({ (id) in
-                    do {
-                        if let ingredientModel = try self.ingredientStorage.getIngredientForId(id: id) {
-                            ingredientModelForPizza.append(ingredientModel)
-                        }
-                    } catch {
-                        print("items not loaded")
-                    }
-                })
-            }
-            
-            
-            retVal.append(
-                MenuItemViewModel(model: pizzaModel,
-                                  ingredients: ingredientModelForPizza))
+            let ingredientModelsForPizza = self.ingredientStorage.getIngredientsForPizza(model: pizzaModel)
+            retVal.append(MenuItemViewModel(model: pizzaModel,
+                                  ingredients: ingredientModelsForPizza))
         })
         
         return retVal

@@ -12,6 +12,7 @@ import PromiseKit
 protocol IngredientStorageProtocol {
     func getIngredients() -> Promise<[IngredientModel]>
     func getIngredientForId(id: Int) throws -> IngredientModel?
+    func getIngredientsForPizza(model: PizzaModel) -> [IngredientModel]
 }
 
 final class InMemoryIngredientStorage: BaseInMemoryStorage<IngredientModel>, IngredientStorageProtocol {
@@ -25,6 +26,25 @@ final class InMemoryIngredientStorage: BaseInMemoryStorage<IngredientModel>, Ing
             throw DataProviderError.dataNotLoadedError
         }
         return ingredients.filter({ $0.id == id }).first
+    }
+    
+    func getIngredientsForPizza(model: PizzaModel) -> [IngredientModel] {
+        
+        var ingredientModelForPizza = [IngredientModel]()
+        // Get ingredients from ingredient ids
+        if let ingredientIds = model.ingredientIds {
+            ingredientIds.forEach({ (id) in
+                do {
+                    if let ingredientModel = try self.getIngredientForId(id: id) {
+                        ingredientModelForPizza.append(ingredientModel)
+                    }
+                } catch {
+                    print("items not loaded")
+                }
+            })
+        }
+        
+        return ingredientModelForPizza
     }
     
     override func getElements() -> Promise<[IngredientModel]> {

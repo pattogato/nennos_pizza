@@ -108,13 +108,10 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     func loadData() -> Promise<Void> {
         return ingredientStorage.getIngredients().then { (ingredients) -> Promise<Void> in
             self.ingredients = ingredients
+            self.addSelectedItemsIfNeeded()
             // Return empty promise
             return Promise { fulfill, reject in fulfill() }
         }
-    }
-    
-    private func refreshSumPrice() {
-        delegate?.refreshSumPrice(price: self.getSumPrice())
     }
     
     func setPizza(pizzaModel: PizzaModel) {
@@ -126,6 +123,18 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
             return "custom.create.title".localized
         } else {
             return pizza?.name ?? ""
+        }
+    }
+    
+    // MARK: private functions
+    
+    private func refreshSumPrice() {
+        delegate?.refreshSumPrice(price: self.getSumPrice())
+    }
+    
+    private func addSelectedItemsIfNeeded() {
+        if let pizza = self.pizza {
+            selectedIngredients = ingredientStorage.getIngredientsForPizza(model: pizza)
         }
     }
 }
