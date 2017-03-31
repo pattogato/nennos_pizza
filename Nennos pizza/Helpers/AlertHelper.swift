@@ -45,16 +45,38 @@ final class AlertHelper {
                                    cancelTitle: String,
                                    retryTitle: String,
                                    from: UIViewController,
-                                   retryActionHandler: ((UIAlertAction) -> Void)) {
+                                   retryActionHandler: ((UIAlertAction) -> Void)?) {
         
         
-        
+        from.show(alert(title: title,
+                        message: message,
+                        cancelAction: createAction(title: cancelTitle),
+                        preferredStyle: .alert,
+                        actions: [
+                            createAction(title: retryTitle,
+                                         style: .default,
+                                         handler: retryActionHandler)
+            ]), sender: nil)
     }
     
+    /**
+     Creates a UIAlertAction with the given parameters
+     */
     static func createAction(title: String, style: UIAlertActionStyle = .default, handler: ((UIAlertAction) -> Void)? = nil) -> UIAlertAction {
         return UIAlertAction(title: title, style: style, handler: handler)
     }
     
+    /**
+     Creates a UIAlertController
+     
+     - Parameters:
+     - title: alert's title
+     - mesage: alert's message
+     - cancelAction: UIAlertAction to execute on cancel button tap
+     - preferredStyle: Alert's style
+     
+     - Returns: UIAlertController instance
+     */
     private static func alert(title: String?, message: String?, cancelAction: UIAlertAction, preferredStyle: UIAlertControllerStyle = .alert,
                        actions: [UIAlertAction]? = nil) -> UIAlertController {
         
