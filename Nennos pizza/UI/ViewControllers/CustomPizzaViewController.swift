@@ -15,7 +15,7 @@ protocol IngredientViewModelProtocol {
     var price: Double { get }
 }
 
-class CustomPizzaViewController: UIViewController {
+class CustomPizzaViewController: UIViewController, NotificationProtocol {
     
     var dataProvider: CustomPizzaDataProviderProtocol!
     
@@ -37,7 +37,7 @@ class CustomPizzaViewController: UIViewController {
     }
     
     private func setupData() {
-        _ = dataProvider.loadData().then { _ -> Void in
+        _ = dataProvider.loadDataIfNeeded().then { _ -> Void in
                 self.tableView.reloadData()
                 self.setupUI()
             }.catch { (error) in
@@ -81,7 +81,7 @@ class CustomPizzaViewController: UIViewController {
         // TODO: add to cart & show cart view on tap
         print("add to cart")
         self.dismiss(animated: true) {
-            NotificationHelper.showStatusBarMessage("notification.added.to.cart".localized, action: nil)
+            self.showStatusBarMessage("notification.added.to.cart".localized)
         }
     }
     

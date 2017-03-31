@@ -15,12 +15,48 @@ protocol CartDataProviderProtocol {
     func sumPrice() -> Double
 }
 
-final class MockedCartDataProvider: CartDataProviderProtocol {
+final class CartDataProvider: CartDataProviderProtocol {
     
-    private struct CartItemViewModel: CartItemViewModelProtocol {
-        var price: Double
-        var title: String
+    let cartManager: CartManagerProtocol
+    
+    init(cartManager: CartManagerProtocol) {
+        self.cartManager = cartManager
     }
+    
+    func numberOfRows() -> Int {
+        return cartManager.items.count
+    }
+    
+    func itemAt(indexPath: IndexPath) -> CartItemViewModelProtocol {
+        return CartItemViewModel(shoppableModel: cartManager.items[indexPath.row])
+    }
+    
+    func deleteItemAt(indexPath: IndexPath) {
+        cartManager.removeItemFromCart(item: cartManager.items[indexPath.row])
+    }
+    
+    func sumPrice() -> Double {
+        return cartManager.getSumPrice()
+    }
+    
+}
+
+fileprivate struct CartItemViewModel: CartItemViewModelProtocol {
+    var price: Double
+    var title: String
+    
+    init(price: Double, title: String) {
+        self.price = price
+        self.title = title
+    }
+    
+    init(shoppableModel: ShoppableItem) {
+        self.price = shoppableModel.price
+        self.title = shoppableModel.name
+    }
+}
+
+final class MockedCartDataProvider: CartDataProviderProtocol {
     
     func numberOfRows() -> Int {
         return 9

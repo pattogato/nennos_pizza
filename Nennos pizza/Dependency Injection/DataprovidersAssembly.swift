@@ -31,7 +31,9 @@ final class  DataprovidersAssembly: Assembly {
         
         // Cart
         container.register(CartDataProviderProtocol.self) { r in
-            return MockedCartDataProvider()
+            return CartDataProvider(
+                cartManager: r.resolve(CartManagerProtocol.self)!
+            )
         }
         
         // Drinks

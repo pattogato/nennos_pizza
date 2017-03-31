@@ -34,3 +34,16 @@ final class PizzaModel {
 //        return DrinkViewModel(name: self.name, price: self.price)
 //    }
 }
+
+// To be able to insert to cart
+extension PizzaModel: ShoppableItem {
+    
+    var price: Double {
+        return basePrice
+    }
+    
+    var associatedObject: AnyObject {
+        return self
+    }
+    
+}

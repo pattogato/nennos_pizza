@@ -6,22 +6,21 @@
 //  Copyright © 2017 bence.pattogato. All rights reserved.
 //
 
-import Whisper
+import CWStatusBarNotification
+import UIKit
 
 
-final class NotificationHelper {
+protocol NotificationProtocol {
+    func showStatusBarMessage(_ message: String)
+}
+
+extension NotificationProtocol where Self: UIViewController {
     
-    private struct Constants {
-        static let messageDismissTime: TimeInterval = 3.0
+    func showStatusBarMessage(_ message: String) {
+        let notification = CWStatusBarNotification()
+        notification.notificationLabelBackgroundColor = Colors.red.withAlphaComponent(0.8)
+        notification.notificationLabelTextColor = UIColor.white
+        notification.notificationLabelFont = Fonts.sfDisplaySemibold(size: 14)
+        notification.display(withMessage: message, forDuration: 3)
     }
-    
-    static func showStatusBarMessage(_ message: String, action: (() -> Void)? = nil) {
-        let murmur = Murmur(title: message,
-                            backgroundColor: Colors.red.withAlphaComponent(0.8),
-                            titleColor: .white,
-                            font: Fonts.sfDisplaySemibold(size: 14),
-                            action: action)
-        show(whistle: murmur, action: .show(Constants.messageDismissTime))
-    }
-    
 }

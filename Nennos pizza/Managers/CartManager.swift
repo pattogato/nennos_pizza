@@ -11,18 +11,27 @@ import Foundation
 protocol ShoppableItem {
     var name: String { get }
     var price: Double { get }
-    var associatedObject: AnyObject { get set }
+    var associatedObject: AnyObject { get }
     var cartId: String { get }
+}
+
+extension ShoppableItem {
+    var cartId: String {
+        return UUID().uuidString
+    }
 }
 
 protocol CartManagerProtocol {
     func addItemToCart(item: ShoppableItem)
     func removeItemFromCart(item: ShoppableItem)
+    func getSumPrice() -> Double
+    
+    var items: [ShoppableItem] { get }
 }
 
 final class CartManager: CartManagerProtocol {
     
-    private var items = [ShoppableItem]()
+    var items = [ShoppableItem]()
     
     func addItemToCart(item: ShoppableItem) {
         items.append(item)
@@ -30,6 +39,12 @@ final class CartManager: CartManagerProtocol {
     
     func removeItemFromCart(item: ShoppableItem) {
         items = items.filter({ $0.cartId != item.cartId })
+    }
+    
+    func getSumPrice() -> Double {
+        var price: Double = 0.0
+        items.forEach({ price += $0.price })
+        return price
     }
     
 }

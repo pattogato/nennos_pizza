@@ -34,7 +34,14 @@ final class MenuDataProvider: MenuDataProviderProtocol {
         self.ingredientStorage = ingredientStorage
     }
     
-    func loadData() -> Promise<Void> {
+    func loadDataIfNeeded() -> Promise<Void> {
+        if self.pizzas != nil {
+            return Promise { fulfill, reject in fulfill() }
+        }
+        return reloadData()
+    }
+    
+    func reloadData() -> Promise<Void> {
         // Load ingredients first
         return ingredientStorage.getIngredients().then { _ -> Promise<Void> in
             // Then load pizzas
@@ -72,8 +79,11 @@ final class MenuDataProvider: MenuDataProviderProtocol {
     }
     
     func addItemToCart(at indexPath: IndexPath) {
-        // TODO: call this method
-//        cartManager.addItemToCart(item: <#T##ShoppableItem#>)
+        do {
+            cartManager.addItemToCart(item: try getModelAt(indexPath: indexPath))
+        } catch {
+            print("Item should be available at \(indexPath)")
+        }
     }
     
     private func createViewModelsFrom(pizzaModels: [PizzaModel]) -> [MenuItemViewModelProtocol] {
@@ -95,7 +105,11 @@ final class MenuDataProvider: MenuDataProviderProtocol {
  */
 final class MockedMenuDataProvider: MenuDataProviderProtocol {
     
-    func loadData() -> Promise<Void> {
+    func loadDataIfNeeded() -> Promise<Void> {
+        return Promise { fulfill, reject in fulfill() }
+    }
+    
+    func reloadData() -> Promise<Void> {
         return Promise { fulfill, reject in fulfill() }
     }
     

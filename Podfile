@@ -15,7 +15,7 @@ target 'Nennos pizza' do
     pod 'ObjectMapper', '~> 2.2.5' # Mapping JSON objects
     pod 'AlamofireObjectMapper', '~> 4.1.0' # ObjectMapper with alamofire integration
     # UI
-    pod 'Whisper', '~> 4.0.0' # For status bar notifications
+    pod 'CWStatusBarNotification', '~> 2.3.5' # For status bar notifications
     pod 'SVProgressHUD', '~> 2.1.2'
     # Dependency injection
     pod 'Swinject', '~> 2.0.0'

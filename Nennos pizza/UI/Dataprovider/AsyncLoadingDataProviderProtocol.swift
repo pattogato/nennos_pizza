@@ -15,5 +15,6 @@ enum DataProviderError: Swift.Error {
 }
 
 protocol AsyncLoadingDataProviderProtocol {
-    func loadData() -> Promise<Void>
+    func loadDataIfNeeded() -> Promise<Void>
+    func reloadData() -> Promise<Void>
 }

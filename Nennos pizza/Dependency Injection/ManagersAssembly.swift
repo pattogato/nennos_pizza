@@ -27,7 +27,7 @@ final class ManagersAssembly: Assembly {
         // Resolve cartmanager
         container.register(CartManagerProtocol.self) { r in
             return CartManager()
-        }
+        }.inObjectScope(.container)
     
     }
     

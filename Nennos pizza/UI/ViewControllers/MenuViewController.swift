@@ -15,7 +15,7 @@ protocol MenuItemViewModelProtocol {
     var price: Double { get }
 }
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, NotificationProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,6 +32,11 @@ class MenuViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "menu.title".localized
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         loadData()
     }
     
@@ -40,7 +45,7 @@ class MenuViewController: UIViewController {
         LoaderHelper.showLoader()
         // Load data asynchronously, if it failes, the retry button on alertview
         // Calls this function again
-        _ = dataProvider.loadData().then { _ -> Void in
+        _ = dataProvider.loadDataIfNeeded().then { _ -> Void in
             self.tableView.reloadData()
         }.catch { error in
             self.showNetworkError()
@@ -121,6 +126,8 @@ extension MenuViewController: ButtonTableViewCellDelegate {
     func buttonTouched(cell: UITableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             dataProvider.addItemToCart(at: indexPath)
+            showStatusBarMessage("notification.added.to.cart".localized)
+            
         }
     }
 }
