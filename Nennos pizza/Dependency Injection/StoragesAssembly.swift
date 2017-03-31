@@ -14,7 +14,7 @@ final class StoragesAssembly: Assembly {
     func assemble(container: Container) {
         // Resolve ingredient storage with inMemory implementation
         container.register(IngredientStorageProtocol.self) { r in
-            return InMemoryIngredientStorage()
+            return InMemoryIngredientStorage(service: r.resolve(ServicesProtocol.self)!)
         }
         
     }

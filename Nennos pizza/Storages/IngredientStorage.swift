@@ -15,7 +15,11 @@ protocol IngredientStorageProtocol {
 
 final class InMemoryIngredientStorage: IngredientStorageProtocol {
     
-    var service: ServicesProtocol!
+    let service: ServicesProtocol
+    
+    init(service: ServicesProtocol) {
+        self.service = service
+    }
     
     private var ingredients: [IngredientModel]? = nil
     

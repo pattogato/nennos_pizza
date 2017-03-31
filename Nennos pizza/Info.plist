@@ -42,5 +42,10 @@
 		<string>SF-UI-Display-Italic.otf</string>
 		<string>SF-UI-Display-Semibold.otf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
