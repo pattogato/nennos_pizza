@@ -22,3 +22,13 @@
 
 // Drinks
 "drinks.title" = "DRINKS";
+
+// Alert
+"error.title" = "Ooops, something went wrong";
+"error.network.message" = "Sorry for incovenience, but some network errors occured";
+"error.ok" = "Got it";
+"error.cancel" = "Cancel";
+"error.retry" = "Retry";
+
+// Loading
+"loading" = "Loading...";

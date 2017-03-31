@@ -10,6 +10,14 @@ import UIKit
 
 final class AlertHelper {
     
+    static func showNetworkAlert(from: UIViewController, retryActionHandler: ((UIAlertAction) -> Void)?) {
+        showErrorWithRetry(title: "error.title".localized,
+                           message: "error.network.message".localized,
+                           cancelTitle: "error.cancel".localized,
+                           retryTitle: "error.retry".localized,
+                           from: from, retryActionHandler: retryActionHandler)
+    }
+    
     /**
      Shows an alert on the viewcontroller with only cancel
      

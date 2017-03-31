@@ -35,7 +35,7 @@ class DrinksViewController: UIViewController {
 
 extension DrinksViewController: ButtonTableViewCellDelegate {
     
-    func leftButtonTouched(cell: UITableViewCell) {
+    func buttonTouched(cell: UITableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             dataProvider.addItemToCartAt(indexPath: indexPath)
         }

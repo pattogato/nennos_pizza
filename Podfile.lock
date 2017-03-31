@@ -23,6 +23,7 @@ PODS:
   - RealmSwift (1.1.0):
     - Realm (= 1.1.0)
   - SnapKit (3.2.0)
+  - SVProgressHUD (2.1.2)
   - Swinject (2.0.0)
   - SwinjectStoryboard (1.0.0):
     - Swinject (= 2.0.0)
@@ -30,14 +31,15 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4.0)
-  - AlamofireImage
-  - AlamofireObjectMapper
-  - ObjectMapper
-  - PromiseKit
+  - AlamofireImage (~> 3.2.0)
+  - AlamofireObjectMapper (~> 4.1.0)
+  - ObjectMapper (~> 2.2.5)
+  - PromiseKit (~> 4.1.7)
   - RealmSwift (~> 1.1.0)
-  - SnapKit
-  - Swinject
-  - SwinjectStoryboard
+  - SnapKit (~> 3.2.0)
+  - SVProgressHUD (~> 2.1.2)
+  - Swinject (~> 2.0.0)
+  - SwinjectStoryboard (~> 1.0.0)
   - Whisper (~> 4.0.0)
 
 SPEC CHECKSUMS:
@@ -49,10 +51,11 @@ SPEC CHECKSUMS:
   Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   Swinject: 2e964a80d70ab09b3949c99032711f89147bfd60
   SwinjectStoryboard: 8e0d3c0202b64172bdf915d55e8dc83d9c4e7863
   Whisper: 08be92623311f8e53201e62e17f6d7b9599a4714
 
-PODFILE CHECKSUM: a242938d1941ccdd64ca4d9eeada9393fb2f6791
+PODFILE CHECKSUM: b3c8feb7bb6ee70e2eca0a5ec3707d85fb9da004
 
 COCOAPODS: 1.2.0

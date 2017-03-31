@@ -26,6 +26,7 @@ final class DIManager {
             ManagersAssembly(),
             ServicesAssembly(),
             DataprovidersAssembly(),
+            StoragesAssembly()
             ])
     }
     

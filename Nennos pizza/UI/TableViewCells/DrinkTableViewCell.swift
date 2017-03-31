@@ -13,7 +13,7 @@ class DrinkTableViewCell: SimpleListTableViewCell {
     weak var delegate: ButtonTableViewCellDelegate?
     
     @IBAction func didTapAddButton(_ sender: Any) {
-        delegate?.leftButtonTouched(cell: self)
+        delegate?.buttonTouched(cell: self)
     }
     
     

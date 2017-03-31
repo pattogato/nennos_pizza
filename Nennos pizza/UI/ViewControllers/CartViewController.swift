@@ -81,7 +81,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CartViewController: ButtonTableViewCellDelegate {
     
-    func leftButtonTouched(cell: UITableViewCell) {
+    func buttonTouched(cell: UITableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             self.dataProvider.deleteItemAt(indexPath: indexPath)
         }

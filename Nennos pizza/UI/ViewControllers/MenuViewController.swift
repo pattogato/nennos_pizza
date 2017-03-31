@@ -17,6 +17,8 @@ protocol MenuItemViewModelProtocol {
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     fileprivate struct Constants {
         static let menuCellIdentifier = "MenuTableViewCell"
         static let rowHeight: CGFloat = 178.0
@@ -30,6 +32,32 @@ class MenuViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "menu.title".localized
+        loadData()
+    }
+    
+    // Loads data from dataprovider asnychronously
+    private func loadData() {
+        LoaderHelper.showLoader()
+        // Load data asynchronously, if it failes, the retry button on alertview
+        // Calls this function again
+        _ = dataProvider.loadData().then { success -> Void in
+            if success {
+                self.tableView.reloadData()
+            } else {
+                self.showNetworkError()
+            }
+        }.catch { error in
+            self.showNetworkError()
+        }.always {
+            LoaderHelper.dismissLoader()
+        }
+    }
+    
+    // Shows network error with retry button
+    private func showNetworkError() {
+        AlertHelper.showNetworkAlert(from: self, retryActionHandler: { _ in
+            self.loadData()
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,8 +96,12 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = cell as? MenuTableViewCell {
             do {
                 cell.setupUI(viewModel: try dataProvider.itemAt(indexPath: indexPath))
+                cell.delegate = self
             } catch {
-                
+                AlertHelper.showAlert(title: "error.title".localized,
+                                      message: "error.network.message".localized,
+                                      cancelTitle: "error.ok".localized,
+                                      from: self)
             }
         }
     }
@@ -82,4 +114,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: Constants.createSegueIdentifier, sender: indexPath)
     }
     
+}
+
+extension MenuViewController: ButtonTableViewCellDelegate {
+    
+    func buttonTouched(cell: UITableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            dataProvider.addItemToCart(at: indexPath)
+        }
+    }
 }

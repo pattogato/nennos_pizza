@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ButtonTableViewCellDelegate: class {
-    func leftButtonTouched(cell: UITableViewCell)
+    func buttonTouched(cell: UITableViewCell)
 }
 
 class SimpleListTableViewCell: UITableViewCell {

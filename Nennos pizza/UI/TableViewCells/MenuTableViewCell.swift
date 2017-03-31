@@ -17,6 +17,8 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var addToCartButton: AddToCartUIButton!
     
+    weak var delegate: ButtonTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,5 +41,10 @@ class MenuTableViewCell: UITableViewCell {
         ingredientsLabel.text = viewModel.ingredients
         addToCartButton.setPrice(viewModel.price)
     }
+    
+    @IBAction func didTapAddToCartButton(_ sender: Any) {
+        delegate?.buttonTouched(cell: self)
+    }
+    
     
 }

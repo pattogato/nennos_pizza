@@ -29,7 +29,7 @@ class CartTableViewCell: SimpleListTableViewCell {
     }
     
     @IBAction func didTapDeleteButton(_ sender: Any) {
-        delegate?.leftButtonTouched(cell: self)
+        delegate?.buttonTouched(cell: self)
     }
     
     private func setUIMode(total: Bool) {

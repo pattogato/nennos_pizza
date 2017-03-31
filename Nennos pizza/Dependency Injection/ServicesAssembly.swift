@@ -12,9 +12,10 @@ import Swinject
 final class ServicesAssembly: Assembly {
     
     func assemble(container: Container) {
-//        container.register(FeedServiceProtocol.self) { r in
-//            return FeedService(
-//                apiClient: r.resolve(RESTAPIClientProtocol.self)!)
-//        }
+        
+        container.register(ServicesProtocol.self) { r in
+            return Services()
+        }
+        
     }
 }

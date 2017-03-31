@@ -23,6 +23,7 @@
 		B109DF851E872EE300D68787 /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B109DF821E872EE300D68787 /* SF-UI-Display-Regular.otf */; };
 		B112D3801E88F7C60087FE10 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */; };
 		B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */; };
+		B13BA12E1E8E73B10085CF41 /* LoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13BA12D1E8E73B10085CF41 /* LoaderHelper.swift */; };
 		B152117C1E8A48710042119E /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152117B1E8A48710042119E /* ApplicationAssembly.swift */; };
 		B15211801E8A4B2D0042119E /* ApplicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152117F1E8A4B2D0042119E /* ApplicationRouter.swift */; };
 		B15211821E8A4B8E0042119E /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15211811E8A4B8E0042119E /* ServicesAssembly.swift */; };
@@ -99,6 +100,7 @@
 		B109DF821E872EE300D68787 /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
 		B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPizzaViewController.swift; sourceTree = "<group>"; };
+		B13BA12D1E8E73B10085CF41 /* LoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
 		B152117B1E8A48710042119E /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		B152117F1E8A4B2D0042119E /* ApplicationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
 		B15211811E8A4B8E0042119E /* ServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				B109DF781E86FE1400D68787 /* Extensions.swift */,
 				B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */,
 				B1921E3C1E8E6C6D00043C5B /* AlertHelper.swift */,
+				B13BA12D1E8E73B10085CF41 /* LoaderHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				B112D3821E88FE6F0087FE10 /* CustomPizzaViewController.swift in Sources */,
 				B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */,
 				B152117C1E8A48710042119E /* ApplicationAssembly.swift in Sources */,
+				B13BA12E1E8E73B10085CF41 /* LoaderHelper.swift in Sources */,
 				B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */,
 				B1AF237B1E8DA880004E52B0 /* IngredientModel.swift in Sources */,
 				B1AF23751E8DA737004E52B0 /* IngredientStorage.swift in Sources */,

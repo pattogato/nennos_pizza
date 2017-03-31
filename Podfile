@@ -11,17 +11,18 @@ target 'Nennos pizza' do
     pod 'RealmSwift', '~> 1.1.0' # Local database'
     # Networking
     pod 'Alamofire', '~> 4.4.0' # Local database'
-    pod 'AlamofireImage' # Asnychron image loading
-    pod 'ObjectMapper' # Mapping JSON objects
-    pod 'AlamofireObjectMapper' # ObjectMapper with alamofire integration
+    pod 'AlamofireImage', '~> 3.2.0' # Asnychron image loading
+    pod 'ObjectMapper', '~> 2.2.5' # Mapping JSON objects
+    pod 'AlamofireObjectMapper', '~> 4.1.0' # ObjectMapper with alamofire integration
     # UI
     pod 'Whisper', '~> 4.0.0' # For status bar notifications
+    pod 'SVProgressHUD', '~> 2.1.2'
     # Dependency injection
-    pod 'Swinject'
-    pod 'SwinjectStoryboard'
-    pod 'SnapKit'
+    pod 'Swinject', '~> 2.0.0'
+    pod 'SwinjectStoryboard', '~> 1.0.0'
+    pod 'SnapKit', '~> 3.2.0'
     # Asynchronousity handling
-    pod 'PromiseKit'
+    pod 'PromiseKit', '~> 4.1.7'
     
   target 'Nennos pizzaTests' do
     inherit! :search_paths
