@@ -105,10 +105,11 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
         return sum
     }
     
-    func loadData() -> Promise<Bool> {
-        return ingredientStorage.getIngredients().then { (ingredients) -> Promise<Bool> in
+    func loadData() -> Promise<Void> {
+        return ingredientStorage.getIngredients().then { (ingredients) -> Promise<Void> in
             self.ingredients = ingredients
-            return Promise(value: true)
+            // Return empty promise
+            return Promise { fulfill, reject in fulfill() }
         }
     }
     
@@ -185,8 +186,8 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
         return sumPrice
     }
     
-    func loadData() -> Promise<Bool> {
-        return Promise(value: true)
+    func loadData() -> Promise<Void> {
+        return Promise { fulfill, reject in fulfill() }
     }
     
     func getTitle() -> String {

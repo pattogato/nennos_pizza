@@ -24,7 +24,8 @@ final class  DataprovidersAssembly: Assembly {
         container.register(MenuDataProviderProtocol.self) { r in
             return MenuDataProvider(
                 pizzaStorage: r.resolve(PizzaStorageProtocol.self)!,
-                cartManager: r.resolve(CartManagerProtocol.self)!
+                cartManager: r.resolve(CartManagerProtocol.self)!,
+                ingredientStorage: r.resolve(IngredientStorageProtocol.self)!
             )
         }
         

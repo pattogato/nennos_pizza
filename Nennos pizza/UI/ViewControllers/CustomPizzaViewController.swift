@@ -37,17 +37,9 @@ class CustomPizzaViewController: UIViewController {
     }
     
     private func setupData() {
-        _ = dataProvider.loadData().then { (success) -> Void in
-            if success {
+        _ = dataProvider.loadData().then { _ -> Void in
                 self.tableView.reloadData()
                 self.setupUI()
-            } else {
-                // Show error with calling this method again at retry button tap
-                AlertHelper.showNetworkAlert(from: self,
-                                             retryActionHandler: { (_) in
-                                                self.setupData()
-                })
-            }
             }.catch { (error) in
                 AlertHelper.showError(from: self,
                                       error: error,

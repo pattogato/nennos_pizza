@@ -19,35 +19,46 @@ protocol MenuDataProviderProtocol: AsyncLoadingDataProviderProtocol {
 final class MenuDataProvider: MenuDataProviderProtocol {
     
     let pizzaStorage: PizzaStorageProtocol
+    // The ingredient storage needed, to exchange the ingredient ID-s to models
+    let ingredientStorage: IngredientStorageProtocol
     let cartManager: CartManagerProtocol
     
     private var pizzas: [PizzaModel]?
+    private var viewModels: [MenuItemViewModelProtocol]?
     
-    init(pizzaStorage: PizzaStorageProtocol, cartManager: CartManagerProtocol) {
+    init(pizzaStorage: PizzaStorageProtocol,
+         cartManager: CartManagerProtocol,
+         ingredientStorage: IngredientStorageProtocol) {
         self.pizzaStorage = pizzaStorage
         self.cartManager = cartManager
+        self.ingredientStorage = ingredientStorage
     }
     
-    func loadData() -> Promise<Bool> {
-        return pizzaStorage.getPizzas().then(execute: { (pizzas) -> Promise<Bool> in
-            self.pizzas = pizzas
-            
-            return Promise(value: true)
-        })
+    func loadData() -> Promise<Void> {
+        // Load ingredients first
+        return ingredientStorage.getIngredients().then { _ -> Promise<Void> in
+            // Then load pizzas
+            return self.pizzaStorage.getPizzas().then(execute: { (pizzas) -> Promise<Void> in
+                self.pizzas = pizzas
+                self.viewModels = self.createViewModelsFrom(pizzaModels: pizzas)
+                return Promise { fulfill, reject in fulfill() }
+            })
+        }
     }
     
     func numberOfRows() -> Int {
-        return pizzas?.count ?? 0
+        return viewModels?.count ?? 0
     }
     
     func itemAt(indexPath: IndexPath) throws -> MenuItemViewModelProtocol {
-        guard let pizzas = self.pizzas else {
+        guard let viewModels = self.viewModels else {
             throw DataProviderError.dataNotLoadedError
         }
-        if indexPath.row > pizzas.count + 1 {
+        if indexPath.row > viewModels.count + 1 {
             throw DataProviderError.indexOutOfBounds
         }
-        return MenuItemViewModel(model: pizzas[indexPath.row])
+        
+        return viewModels[indexPath.row]
     }
     
     func getModelAt(indexPath: IndexPath) throws -> PizzaModel {
@@ -65,6 +76,33 @@ final class MenuDataProvider: MenuDataProviderProtocol {
 //        cartManager.addItemToCart(item: <#T##ShoppableItem#>)
     }
     
+    private func createViewModelsFrom(pizzaModels: [PizzaModel]) -> [MenuItemViewModelProtocol] {
+        var retVal = [MenuItemViewModelProtocol]()
+        // Create viewmodels onlya once per loaddata
+        pizzaModels.forEach({ (pizzaModel) in
+            var ingredientModelForPizza = [IngredientModel]()
+            // Get ingredients from ingredient ids
+            if let ingredientIds = pizzaModel.ingredientIds {
+                ingredientIds.forEach({ (id) in
+                    do {
+                        if let ingredientModel = try self.ingredientStorage.getIngredientForId(id: id) {
+                            ingredientModelForPizza.append(ingredientModel)
+                        }
+                    } catch {
+                        print("items not loaded")
+                    }
+                })
+            }
+            
+            
+            retVal.append(
+                MenuItemViewModel(model: pizzaModel,
+                                  ingredients: ingredientModelForPizza))
+        })
+        
+        return retVal
+    }
+    
 }
 
 /**
@@ -72,8 +110,8 @@ final class MenuDataProvider: MenuDataProviderProtocol {
  */
 final class MockedMenuDataProvider: MenuDataProviderProtocol {
     
-    func loadData() -> Promise<Bool> {
-        return Promise(value: true)
+    func loadData() -> Promise<Void> {
+        return Promise { fulfill, reject in fulfill() }
     }
     
     func numberOfRows() -> Int {
@@ -110,12 +148,32 @@ fileprivate struct MenuItemViewModel: MenuItemViewModelProtocol {
     }
 
     
-    init(model: PizzaModel) {
+    init(model: PizzaModel, ingredients: [IngredientModel]) {
         self.imageUrl = model.imageUrl
-        self.ingredients = "dummy ingredients"
-//        self.ingredients = networkModel.ingredients
         self.price = model.basePrice
         self.title = model.name
-        
+        self.ingredients = ""
+        self.ingredients = createIngredientsString(ingredientModels: ingredients)
+    }
+    
+    /**
+     Constructs the ingredient string
+     */
+    func createIngredientsString(ingredientModels: [IngredientModel]) -> String {
+        var retVal = ""
+        for (index, ingredientModel) in ingredientModels.enumerated() {
+            switch index {
+            case 0:
+                // First
+                retVal += ingredientModel.name + " "
+            case ingredientModels.count - 1:
+                // Last with dot at the end
+                retVal += ingredientModel.name + "."
+            default:
+                // Rest separated with coma,lowercased
+                retVal += ingredientModel.name.lowercased() + ", "
+            }
+        }
+        return retVal
     }
 }

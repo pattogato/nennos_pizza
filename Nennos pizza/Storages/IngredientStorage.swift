@@ -11,12 +11,20 @@ import PromiseKit
 
 protocol IngredientStorageProtocol {
     func getIngredients() -> Promise<[IngredientModel]>
+    func getIngredientForId(id: Int) throws -> IngredientModel?
 }
 
 final class InMemoryIngredientStorage: BaseInMemoryStorage<IngredientModel>, IngredientStorageProtocol {
     
     func getIngredients() -> Promise<[IngredientModel]> {
         return getElements()
+    }
+    
+    func getIngredientForId(id: Int) throws -> IngredientModel? {
+        guard let ingredients = self.storedElements else {
+            throw DataProviderError.dataNotLoadedError
+        }
+        return ingredients.filter({ $0.id == id }).first
     }
     
     override func getElements() -> Promise<[IngredientModel]> {

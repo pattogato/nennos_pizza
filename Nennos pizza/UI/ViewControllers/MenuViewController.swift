@@ -40,12 +40,8 @@ class MenuViewController: UIViewController {
         LoaderHelper.showLoader()
         // Load data asynchronously, if it failes, the retry button on alertview
         // Calls this function again
-        _ = dataProvider.loadData().then { success -> Void in
-            if success {
-                self.tableView.reloadData()
-            } else {
-                self.showNetworkError()
-            }
+        _ = dataProvider.loadData().then { _ -> Void in
+            self.tableView.reloadData()
         }.catch { error in
             self.showNetworkError()
         }.always {
