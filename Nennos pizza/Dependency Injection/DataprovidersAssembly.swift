@@ -16,7 +16,9 @@ final class  DataprovidersAssembly: Assembly {
         // Custom pizza
         container.register(CustomPizzaDataProviderProtocol.self) { r in
             return CustomPizzaDataProvider(
-                ingredientStorage: r.resolve(IngredientStorageProtocol.self)!
+                ingredientStorage: r.resolve(IngredientStorageProtocol.self)!,
+                cartManager: r.resolve(CartManagerProtocol.self)!,
+                pizzaStorage: r.resolve(PizzaStorageProtocol.self)!
             )
         }
         

@@ -14,6 +14,8 @@
 // Custom pizza
 "custom.button.addtocart" = "ADD TO CART (%@)";
 "custom.create.title" = "CREATE A PIZZA";
+"custom.empty" = "Empty pizza";
+"custom.empty.message" = "You forgot to select the ingredients, please choose some :)";
 
 // Notifications
 "notification.added.to.cart" = "ADDED TO CART";

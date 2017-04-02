@@ -29,10 +29,6 @@ final class PizzaModel {
         self.imageUrl = URL(string: networkModel.imageUrl ?? "")
     }
     
-    // TODO: Implement PizzaViewModelProtocol var
-//    var viewModel: Pizza {
-//        return DrinkViewModel(name: self.name, price: self.price)
-//    }
 }
 
 // To be able to insert to cart

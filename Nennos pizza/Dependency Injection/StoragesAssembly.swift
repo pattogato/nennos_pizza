@@ -20,7 +20,10 @@ final class StoragesAssembly: Assembly {
         
         // Resolve pizza storage protocol with inMemory implementation
         container.register(PizzaStorageProtocol.self) { r in
-            return InMemoryPizzaStorage(service: r.resolve(ServicesProtocol.self)!)
+            return InMemoryPizzaStorage(
+                service: r.resolve(ServicesProtocol.self)!,
+                ingredientStorage: r.resolve(IngredientStorageProtocol.self)!
+            )
         }.inObjectScope(.container)
         
         // Resolve drink storage protocol with inMemory implementation

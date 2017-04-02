@@ -78,9 +78,12 @@ class CustomPizzaViewController: UIViewController, NotificationProtocol {
     
     
     @IBAction func didTapAddToCartButton(_ sender: Any) {
-        // TODO: add to cart & show cart view on tap
-        print("add to cart")
-        self.dismiss(animated: true) {
+        if dataProvider.addPizzaToCart() == false {
+            AlertHelper.showAlert(title: "custom.empty".localized,
+                                  message: "custom.empty.message".localized,
+                                  cancelTitle: "error.ok".localized,
+                                  from: self)
+        } else {
             self.showStatusBarMessage("notification.added.to.cart".localized)
         }
     }

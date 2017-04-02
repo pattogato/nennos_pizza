@@ -10,16 +10,20 @@ import UIKit
 import PromiseKit
 
 protocol CustomPizzaDataProviderProtocol: AsyncLoadingDataProviderProtocol {
+    // For tableview
     func numberOfRows() -> Int
     func modelFor(indexPath: IndexPath) throws -> IngredientViewModelProtocol
     func isModelSelected(indexPath: IndexPath) -> Bool
     func selecItemAt(indexPath: IndexPath)
     func deSelecItemAt(indexPath: IndexPath)
+    // Getters
     func getPizzaImageUrl() -> URL?
     func getSumPrice() -> Double
-    func setPizza(pizzaModel: PizzaModel)
     func getTitle() -> String
-    
+    func addPizzaToCart() -> Bool
+    // Setters
+    func setPizza(pizzaModel: PizzaModel)
+    // Properties
     var isAddToCartButtonEnabled: Bool { get }
     var delegate: CustomPizzaDataProviderDelegate? { get set }
     var isCreateMode: Bool { get }
@@ -35,14 +39,22 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     
     // Dependencies
     let ingredientStorage: IngredientStorageProtocol
+    // Need to get the base pizza price
+    let pizzaStorage: PizzaStorageProtocol
+    let cartManager: CartManagerProtocol
     
     // Properties
     var ingredients: [IngredientModel]?
     var selectedIngredients = [IngredientModel]()
+    private var basePrice: Double = Double.greatestFiniteMagnitude
     
     // Init
-    init(ingredientStorage: IngredientStorageProtocol) {
+    init(ingredientStorage: IngredientStorageProtocol,
+         cartManager: CartManagerProtocol,
+         pizzaStorage: PizzaStorageProtocol) {
         self.ingredientStorage = ingredientStorage
+        self.cartManager = cartManager
+        self.pizzaStorage = pizzaStorage
     }
     
     // Store here the set pizza model if there is
@@ -58,6 +70,7 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
         return true
     }
     
+    // MARK: Tableview methods
     func numberOfRows() -> Int {
         return ingredients?.count ?? 0
     }
@@ -95,6 +108,7 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
         refreshSumPrice()
     }
     
+    // MARK: Getters
     func getPizzaImageUrl() -> URL? {
         return pizza?.imageUrl
     }
@@ -105,16 +119,36 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
         return sum
     }
     
-    func setPizza(pizzaModel: PizzaModel) {
-        self.pizza = pizzaModel
-    }
-    
     func getTitle() -> String {
         if isCreateMode {
             return "custom.create.title".localized
         } else {
             return pizza?.name ?? ""
         }
+    }
+    
+    func addPizzaToCart() -> Bool {
+        if let pizza = getCustomPizza() {
+            cartManager.addItemToCart(item: pizza)
+            return true
+        }
+        return false
+    }
+    
+    private func getCustomPizza() -> PizzaModel? {
+        assert(basePrice != Double.greatestFiniteMagnitude, "Base price must be set")
+        guard selectedIngredients.count > 0 else {
+            return nil
+        }
+        return PizzaModel(basePrice: basePrice,
+                          name: "Custom " + (isCreateMode ? "pizza" : (pizza?.name ?? "")),
+                          ingredientIds: selectedIngredients.map({ return $0.id }),
+                          imageUrl: pizza?.imageUrl)
+    }
+    
+    // MARK: Setters
+    func setPizza(pizzaModel: PizzaModel) {
+        self.pizza = pizzaModel
     }
     
     // MARK: Loading methods
@@ -126,13 +160,17 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     }
     
     func reloadData() -> Promise<Void> {
-        return ingredientStorage.getIngredients().then { (ingredients) -> Promise<Void> in
-            self.ingredients = ingredients
-            self.addSelectedItemsIfNeeded()
-            // Return empty promise
-            return Promise { fulfill, reject in fulfill() }
+        return pizzaStorage.getPizzas().then { (_) -> Promise<Void> in
+            return self.ingredientStorage.getIngredients().then { (ingredients) -> Promise<Void> in
+                self.ingredients = ingredients
+                self.addSelectedItemsIfNeeded()
+                self.basePrice = self.pizzaStorage.getBasePrice()
+                // Return empty promise
+                return Promise { fulfill, reject in fulfill() }
+            }
         }
     }
+    
     
     // MARK: private functions
     
@@ -213,6 +251,10 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
     
     func getTitle() -> String {
         return "Mock title"
+    }
+    
+    func addPizzaToCart() -> Bool {
+        return true
     }
 }
 
