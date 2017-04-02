@@ -28,6 +28,9 @@ final class PizzaModel {
         self.imageUrl = URL(string: networkModel.imageUrl ?? "")
     }
     
+    // Must be here, because extension cannot store property
+    var cartId: String = UUID().uuidString
+    
 }
 
 // To be able to insert to cart

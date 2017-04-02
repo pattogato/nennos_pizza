@@ -105,6 +105,7 @@ enum ViewControllers {
     case menu
     case mainNavigation
     case thankYou
+    case cart
     
     var storyboard: Storyboards {
         switch self {
@@ -114,7 +115,7 @@ enum ViewControllers {
             return .menu
         case .mainNavigation:
             return .main
-        case .thankYou:
+        case .thankYou, .cart:
             return .cart
         }
     }
@@ -125,6 +126,7 @@ enum ViewControllers {
         case .menu: return "MenuViewController"
         case .mainNavigation: return "MainNavigationController"
         case .thankYou: return "ThankYouViewController"
+        case .cart: return "CartViewController"
         }
     }
 }

@@ -9,15 +9,23 @@
 import Foundation
 import PromiseKit
 
+protocol CartDataProviderDelegate: class {
+    func refreshData()
+}
+
 protocol CartDataProviderProtocol {
     func numberOfRows() -> Int
     func itemAt(indexPath: IndexPath) -> CartItemViewModelProtocol
     func deleteItemAt(indexPath: IndexPath)
     func sumPrice() -> Double
     func checkoutCart() -> Promise<Void>
+    
+    var delegate: CartDataProviderDelegate? { get set }
 }
 
 final class CartDataProvider: CartDataProviderProtocol {
+    
+    weak var delegate: CartDataProviderDelegate?
     
     let cartManager: CartManagerProtocol
     
@@ -35,6 +43,7 @@ final class CartDataProvider: CartDataProviderProtocol {
     
     func deleteItemAt(indexPath: IndexPath) {
         cartManager.removeItemFromCart(item: cartManager.items[indexPath.row])
+        delegate?.refreshData()
     }
     
     func sumPrice() -> Double {
@@ -63,6 +72,8 @@ fileprivate struct CartItemViewModel: CartItemViewModelProtocol {
 }
 
 final class MockedCartDataProvider: CartDataProviderProtocol {
+    
+    var delegate: CartDataProviderDelegate?
     
     func numberOfRows() -> Int {
         return 9

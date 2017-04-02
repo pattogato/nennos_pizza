@@ -127,7 +127,6 @@ extension MenuViewController: ButtonTableViewCellDelegate {
         if let indexPath = tableView.indexPath(for: cell) {
             dataProvider.addItemToCart(at: indexPath)
             showStatusBarMessage("notification.added.to.cart".localized)
-            
         }
     }
 }

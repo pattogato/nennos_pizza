@@ -27,6 +27,8 @@ final class DrinkModel {
                   name: networkModel.name ?? "")
     }
     
+    var cartId: String = UUID().uuidString
+    
 }
 
 extension DrinkModel: ShoppableItem {

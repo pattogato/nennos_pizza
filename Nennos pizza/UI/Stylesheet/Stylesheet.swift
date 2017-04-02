@@ -34,5 +34,8 @@ struct Fonts {
         return UIFont(name: "SFUIDisplay-Semibold", size: size)!
     }
     
+    static func sfDisplayItalic(size: CGFloat) -> UIFont {
+        return UIFont(name: "SFUIDisplay-Italic", size: size)!
+    }
 }
 

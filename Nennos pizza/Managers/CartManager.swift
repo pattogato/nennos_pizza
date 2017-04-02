@@ -16,12 +16,6 @@ protocol ShoppableItem {
     var cartId: String { get }
 }
 
-extension ShoppableItem {
-    var cartId: String {
-        return UUID().uuidString
-    }
-}
-
 protocol CartManagerProtocol {
     func addItemToCart(item: ShoppableItem)
     func removeItemFromCart(item: ShoppableItem)

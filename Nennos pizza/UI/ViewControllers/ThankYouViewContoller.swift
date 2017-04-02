@@ -21,6 +21,7 @@ final class ThankYouViewContoller: UIViewController {
             UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(_:)))
         )
         
+//        thankYouLabel.font = Fonts.sfDisplayItalic(size: 34.0)
     }
     
     func viewTapped(_ sender: UITapGestureRecognizer) {

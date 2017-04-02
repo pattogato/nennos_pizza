@@ -32,6 +32,7 @@ class CartViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "cart.title".localized
+        dataProvider.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +54,12 @@ class CartViewController: UIViewController {
         }
     }
 
+}
+
+extension CartViewController: CartDataProviderDelegate {
+    func refreshData() {
+        self.tableView.reloadData()
+    }
 }
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {

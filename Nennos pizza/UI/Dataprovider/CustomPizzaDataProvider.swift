@@ -116,14 +116,14 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     func getSumPrice() -> Double {
         var sum: Double = 0
         selectedIngredients.forEach({ sum += $0.price })
-        return sum
+        return basePrice + sum
     }
     
     func getTitle() -> String {
         if isCreateMode {
             return "custom.create.title".localized
         } else {
-            return pizza?.name ?? ""
+            return pizza?.name.uppercased() ?? ""
         }
     }
     
