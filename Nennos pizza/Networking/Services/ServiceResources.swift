@@ -13,6 +13,20 @@ fileprivate struct Constants {
     static let baseUrl = "http://beta.json-generator.com/api/json/"
 }
 
+enum ParameterNames {
+    case drinks
+    case pizzas
+    
+    var name: String {
+        switch self {
+        case .drinks:
+            return "drinks"
+        case .pizzas:
+            return "pizzas"
+        }
+    }
+}
+
 enum ServiceResource {
     
     case getIngredients
@@ -38,7 +52,7 @@ enum ServiceResource {
         case .getIngredients, .getDrinks, .getPizzas:
             return URL(string: Constants.baseUrl + self.additionalUrl)
         case .postCart:
-            return URL(string: "http://posttestserver.com/post.php ")
+            return URL(string: "http://posttestserver.com/post.php")
         }
     }
     

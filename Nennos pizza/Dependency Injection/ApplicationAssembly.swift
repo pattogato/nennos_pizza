@@ -63,6 +63,11 @@ final class ApplicationAssembly: Assembly {
         container.storyboardInitCompleted(DrinksViewController.self) { r, c in
             c.dataProvider = r.resolve(DrinksDataProviderProtocol.self)
         }
+        
+        // ThankYou viewcontroller
+        container.storyboardInitCompleted(ThankYouViewContoller.self) { r, c in
+            c.applicationRouter = r.resolve(ApplicationRouterProtocol.self)
+        }
     }
     
 }
@@ -99,6 +104,7 @@ enum ViewControllers {
     case customPizza
     case menu
     case mainNavigation
+    case thankYou
     
     var storyboard: Storyboards {
         switch self {
@@ -108,6 +114,8 @@ enum ViewControllers {
             return .menu
         case .mainNavigation:
             return .main
+        case .thankYou:
+            return .cart
         }
     }
     
@@ -116,6 +124,7 @@ enum ViewControllers {
         case .customPizza: return "CustomPizzaViewController"
         case .menu: return "MenuViewController"
         case .mainNavigation: return "MainNavigationController"
+        case .thankYou: return "ThankYouViewController"
         }
     }
 }

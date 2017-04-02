@@ -13,7 +13,7 @@ protocol DrinkViewModelProtocol {
     var price: Double { get }
 }
 
-class DrinksViewController: UIViewController {
+class DrinksViewController: UIViewController, NotificationProtocol {
 
     fileprivate struct Constants {
         static let drinkCellIdentifier = "DrinkTableViewCell"
@@ -29,6 +29,22 @@ class DrinksViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "drinks.title".localized
+        loadData()
+    }
+    
+    private func loadData() {
+        LoaderHelper.showLoader()
+        dataProvider.loadDataIfNeeded().then { _ -> Void in
+            self.tableView.reloadData()
+        }.catch { (error) in
+            AlertHelper.showError(from: self,
+                                  error: error,
+                                  retryActionHandler: { _ in
+                                    self.loadData()
+            })
+        }.always {
+            LoaderHelper.dismissLoader()
+        }
     }
 
 }
@@ -38,6 +54,7 @@ extension DrinksViewController: ButtonTableViewCellDelegate {
     func buttonTouched(cell: UITableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
             dataProvider.addItemToCartAt(indexPath: indexPath)
+            self.showStatusBarMessage("notification.added.to.cart".localized)
         }
     }
 }
@@ -58,7 +75,12 @@ extension DrinksViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? DrinkTableViewCell {
-            cell.setupUI(viewModel: dataProvider.itemAt(indexPath: indexPath))
+            do {
+                cell.setupUI(viewModel: try dataProvider.itemAt(indexPath: indexPath))
+            } catch {
+                AlertHelper.showNetworkAlert(from: self, retryActionHandler: nil)
+            }
+            
             cell.delegate = self
         }
     }

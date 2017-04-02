@@ -38,11 +38,13 @@ final class AlertHelper {
      
      */
     static func showAlert(title: String, message: String, cancelTitle: String, from: UIViewController) {
-        from.show(alert(title: title,
-                        message: message,
-                        cancelAction: createAction(title: cancelTitle),
-                        preferredStyle: .alert,
-                        actions: nil), sender: nil)
+        from.present(alert(title: title,
+                           message: message,
+                           cancelAction: createAction(title: cancelTitle),
+                           preferredStyle: .alert,
+                           actions: nil),
+                     animated: true,
+                     completion: nil)
     }
     
     /**
@@ -64,16 +66,17 @@ final class AlertHelper {
                                    from: UIViewController,
                                    retryActionHandler: ((UIAlertAction) -> Void)?) {
         
-        
-        from.show(alert(title: title,
-                        message: message,
-                        cancelAction: createAction(title: cancelTitle),
-                        preferredStyle: .alert,
-                        actions: [
+        from.present(alert(title: title,
+                           message: message,
+                           cancelAction: createAction(title: cancelTitle),
+                           preferredStyle: .alert,
+                           actions: [
                             createAction(title: retryTitle,
                                          style: .default,
                                          handler: retryActionHandler)
-            ]), sender: nil)
+            ]),
+                     animated: true,
+                     completion: nil)
     }
     
     /**

@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-final class DrinkModel  {
+final class DrinkModel {
     
     var id: Int
     var price: Double
@@ -27,7 +27,12 @@ final class DrinkModel  {
                   name: networkModel.name ?? "")
     }
     
-    var viewModel: DrinkViewModelProtocol {
-        return DrinkViewModel(name: self.name, price: self.price)
+}
+
+extension DrinkModel: ShoppableItem {
+    
+    var associatedObject: AnyObject {
+        return self
     }
+    
 }

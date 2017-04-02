@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol CartDataProviderProtocol {
     func numberOfRows() -> Int
     func itemAt(indexPath: IndexPath) -> CartItemViewModelProtocol
     func deleteItemAt(indexPath: IndexPath)
     func sumPrice() -> Double
+    func checkoutCart() -> Promise<Void>
 }
 
 final class CartDataProvider: CartDataProviderProtocol {
@@ -37,6 +39,10 @@ final class CartDataProvider: CartDataProviderProtocol {
     
     func sumPrice() -> Double {
         return cartManager.getSumPrice()
+    }
+    
+    func checkoutCart() -> Promise<Void> {
+        return cartManager.postCart()
     }
     
 }
@@ -74,6 +80,10 @@ final class MockedCartDataProvider: CartDataProviderProtocol {
     
     func sumPrice() -> Double {
         return 66.0
+    }
+    
+    func checkoutCart() -> Promise<Void> {
+        return Promise { fulfill, reject in fulfill() }
     }
 }
 

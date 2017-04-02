@@ -41,6 +41,7 @@
 		<string>SF-UI-Display-Regular.otf</string>
 		<string>SF-UI-Display-Italic.otf</string>
 		<string>SF-UI-Display-Semibold.otf</string>
+		<string>SF-UI-Display-Italic.otf</string>
 	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>

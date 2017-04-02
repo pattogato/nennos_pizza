@@ -19,6 +19,7 @@ class CartViewController: UIViewController {
         static let cartCellIdentifier = "CartTableViewCell"
         static let normalRowHeight: CGFloat = 44.0
         static let totalRowHeight: CGFloat = 70.0
+        static let thankYouSegueIdentifier = "thankYouSegue"
     }
     
     var dataProvider: CartDataProviderProtocol!
@@ -33,8 +34,23 @@ class CartViewController: UIViewController {
         self.title = "cart.title".localized
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     @IBAction func didTapCheckoutButton(_ sender: Any) {
-        print("check")
+        LoaderHelper.showLoader()
+        dataProvider.checkoutCart().then { _ -> Void in
+            self.performSegue(withIdentifier: Constants.thankYouSegueIdentifier, sender: nil)
+        }.catch{ (error) in
+            AlertHelper.showError(from: self,
+                                  error: error,
+                                  retryActionHandler: nil)
+        }.always {
+            LoaderHelper.dismissLoader()
+        }
     }
 
 }

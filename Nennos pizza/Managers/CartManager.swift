@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol ShoppableItem {
     var name: String { get }
@@ -25,11 +26,18 @@ protocol CartManagerProtocol {
     func addItemToCart(item: ShoppableItem)
     func removeItemFromCart(item: ShoppableItem)
     func getSumPrice() -> Double
+    func postCart() -> Promise<Void>
     
     var items: [ShoppableItem] { get }
 }
 
 final class CartManager: CartManagerProtocol {
+    
+    let services: ServicesProtocol
+    
+    init(services: ServicesProtocol) {
+        self.services = services
+    }
     
     var items = [ShoppableItem]()
     
@@ -45,6 +53,27 @@ final class CartManager: CartManagerProtocol {
         var price: Double = 0.0
         items.forEach({ price += $0.price })
         return price
+    }
+    
+    func postCart() -> Promise<Void> {
+        var drinks = [DrinkModel]()
+        var pizzas = [PizzaModel]()
+        items.forEach { (cartItem) in
+            if let drink = cartItem.associatedObject as? DrinkModel {
+                drinks.append(drink)
+            }
+            if let pizza = cartItem.associatedObject as? PizzaModel {
+                pizzas.append(pizza)
+            }
+        }
+        
+        return services.postCart(
+            drinkIds: drinks.map({ $0.id }),
+            pizzas: pizzas.map({ return PizzaResponseNetworkModel(model: $0)  })
+        ).then(execute: { (_) -> Promise<Void> in
+            self.items.removeAll()
+            return Promise { fulfill, reject in fulfill() }
+        })
     }
     
 }

@@ -66,6 +66,7 @@ final class DrinkNetworkModel: IdentifiedNetworkModel {
         
         price <- map["price"]
     }
+
 }
 
 /**
@@ -113,4 +114,26 @@ final class PizzaNetworkModel: BaseNetworkModel {
         imageUrl <- map["imageUrl"]
     }
     
+}
+
+/**
+ This class's purpose is to provide mapping functionality to serialize the 
+ model when posting it to the server
+ */
+final class PizzaResponseNetworkModel: BaseMappable {
+    var name: String?
+    var imageUrl: String?
+    var ingredients: [Int]?
+    
+    func mapping(map: Map) {
+        ingredients <- map["ingredients"]
+        imageUrl <- map["imageUrl"]
+        name <- map["name"]
+    }
+    
+    init(model: PizzaModel) {
+        self.ingredients = model.ingredientIds
+        self.imageUrl = model.imageUrl?.absoluteString
+        self.ingredients = model.ingredientIds
+    }
 }

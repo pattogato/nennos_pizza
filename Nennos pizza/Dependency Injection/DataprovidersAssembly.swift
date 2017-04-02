@@ -38,7 +38,10 @@ final class  DataprovidersAssembly: Assembly {
         
         // Drinks
         container.register(DrinksDataProviderProtocol.self) { r in
-            return MockedDrinksDataProvider()
+            return DrinksDataProvider(
+                drinksStorage: r.resolve(DrinkStorageProtocol.self)!,
+                cartManager: r.resolve(CartManagerProtocol.self)!
+            )
         }
     }
     

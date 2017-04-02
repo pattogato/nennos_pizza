@@ -45,6 +45,8 @@
 		B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */; };
 		B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */; };
 		B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */; };
+		B1F0CBEF1E9168AB0011A13D /* SF-UI-Display-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B13BA12F1E91674D0085CF41 /* SF-UI-Display-Italic.otf */; };
+		B1F0CBF11E9169170011A13D /* ThankYouViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F0CBF01E9169170011A13D /* ThankYouViewContoller.swift */; };
 		B1F7C4FD1E8AC4A0009F7662 /* AlphaDisablaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C4FC1E8AC4A0009F7662 /* AlphaDisablaButton.swift */; };
 		B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */; };
 		B1F7C5011E8BB5C7009F7662 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */; };
@@ -101,6 +103,7 @@
 		B112D37F1E88F7C60087FE10 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		B112D3811E88FE6F0087FE10 /* CustomPizzaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPizzaViewController.swift; sourceTree = "<group>"; };
 		B13BA12D1E8E73B10085CF41 /* LoaderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderHelper.swift; sourceTree = "<group>"; };
+		B13BA12F1E91674D0085CF41 /* SF-UI-Display-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Italic.otf"; sourceTree = "<group>"; };
 		B152117B1E8A48710042119E /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		B152117F1E8A4B2D0042119E /* ApplicationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRouter.swift; sourceTree = "<group>"; };
 		B15211811E8A4B8E0042119E /* ServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
 		B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPizzaDataProvider.swift; path = Dataprovider/CustomPizzaDataProvider.swift; sourceTree = "<group>"; };
+		B1F0CBF01E9169170011A13D /* ThankYouViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouViewContoller.swift; sourceTree = "<group>"; };
 		B1F7C4FC1E8AC4A0009F7662 /* AlphaDisablaButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaDisablaButton.swift; sourceTree = "<group>"; };
 		B1F7C4FE1E8BB0CD009F7662 /* MenuDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuDataProvider.swift; path = Dataprovider/MenuDataProvider.swift; sourceTree = "<group>"; };
 		B1F7C5001E8BB5C7009F7662 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				B1F7C5061E8BD8D2009F7662 /* StyledNavigationViewController.swift */,
 				B1F7C5081E8BE448009F7662 /* CartViewController.swift */,
 				B1F7C5141E8BF3A2009F7662 /* DrinksViewController.swift */,
+				B1F0CBF01E9169170011A13D /* ThankYouViewContoller.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 		B109DF7F1E872EE300D68787 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B13BA12F1E91674D0085CF41 /* SF-UI-Display-Italic.otf */,
 				B109DF801E872EE300D68787 /* SF-UI-Display-Bold.otf */,
 				B109DF811E872EE300D68787 /* SF-UI-Display-Heavy.otf */,
 				B109DF821E872EE300D68787 /* SF-UI-Display-Regular.otf */,
@@ -499,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F0CBEF1E9168AB0011A13D /* SF-UI-Display-Italic.otf in Resources */,
 				B109DF831E872EE300D68787 /* SF-UI-Display-Bold.otf in Resources */,
 				B109DF4B1E86F6E100D68787 /* LaunchScreen.storyboard in Resources */,
 				B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */,
@@ -623,6 +630,7 @@
 				B1F7C4FF1E8BB0CD009F7662 /* MenuDataProvider.swift in Sources */,
 				B15211881E8A4BAF0042119E /* DataprovidersAssembly.swift in Sources */,
 				B1F7C5211E8C3C50009F7662 /* ServiceResources.swift in Sources */,
+				B1F0CBF11E9169170011A13D /* ThankYouViewContoller.swift in Sources */,
 				B1F7C5071E8BD8D2009F7662 /* StyledNavigationViewController.swift in Sources */,
 				B1F7C50B1E8BE45C009F7662 /* CartDataProvider.swift in Sources */,
 				B152118A1E8A4F1D0042119E /* DIManager.swift in Sources */,
