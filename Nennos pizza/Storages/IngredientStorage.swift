@@ -11,8 +11,7 @@ import PromiseKit
 
 protocol IngredientStorageProtocol {
     func getIngredients() -> Promise<[IngredientModel]>
-    func getIngredientForId(id: Int) throws -> IngredientModel?
-    func getIngredientsForPizza(model: PizzaModel) -> [IngredientModel]
+    func getIngredientsFor(ids: [Int]) -> [IngredientModel]
 }
 
 final class InMemoryIngredientStorage: BaseInMemoryStorage<IngredientModel>, IngredientStorageProtocol {
@@ -21,30 +20,27 @@ final class InMemoryIngredientStorage: BaseInMemoryStorage<IngredientModel>, Ing
         return getElements()
     }
     
-    func getIngredientForId(id: Int) throws -> IngredientModel? {
+    private func getIngredientForId(id: Int) throws -> IngredientModel? {
         guard let ingredients = self.storedElements else {
             throw DataProviderError.dataNotLoadedError
         }
         return ingredients.filter({ $0.id == id }).first
     }
     
-    func getIngredientsForPizza(model: PizzaModel) -> [IngredientModel] {
+    func getIngredientsFor(ids: [Int]) -> [IngredientModel] {
         
-        var ingredientModelForPizza = [IngredientModel]()
-        // Get ingredients from ingredient ids
-        if let ingredientIds = model.ingredientIds {
-            ingredientIds.forEach({ (id) in
-                do {
-                    if let ingredientModel = try self.getIngredientForId(id: id) {
-                        ingredientModelForPizza.append(ingredientModel)
-                    }
-                } catch {
-                    print("items not loaded")
+        var ingredientModels = [IngredientModel]()
+        ids.forEach({ (id) in
+            do {
+                if let ingredientModel = try self.getIngredientForId(id: id) {
+                    ingredientModels.append(ingredientModel)
                 }
-            })
-        }
+            } catch {
+                print("items not loaded")
+            }
+        })
         
-        return ingredientModelForPizza
+        return ingredientModels
     }
     
     override func getElements() -> Promise<[IngredientModel]> {

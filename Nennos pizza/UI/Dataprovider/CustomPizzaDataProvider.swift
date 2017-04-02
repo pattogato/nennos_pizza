@@ -136,13 +136,17 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     }
     
     private func getCustomPizza() -> PizzaModel? {
+        func getName() -> String {
+            return "Custom " + (isCreateMode ? "pizza" : (pizza?.name ?? ""))
+        }
         assert(basePrice != Double.greatestFiniteMagnitude, "Base price must be set")
         guard selectedIngredients.count > 0 else {
             return nil
         }
+
         return PizzaModel(basePrice: basePrice,
-                          name: "Custom " + (isCreateMode ? "pizza" : (pizza?.name ?? "")),
-                          ingredientIds: selectedIngredients.map({ return $0.id }),
+                          name: getName(),
+                          ingredients: selectedIngredients,
                           imageUrl: pizza?.imageUrl)
     }
     
@@ -179,8 +183,8 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     }
     
     private func addSelectedItemsIfNeeded() {
-        if let pizza = self.pizza {
-            selectedIngredients = ingredientStorage.getIngredientsForPizza(model: pizza)
+        if let ingredients = self.pizza?.ingredients {
+            selectedIngredients = ingredients
         }
     }
 }

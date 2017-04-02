@@ -132,8 +132,8 @@ final class PizzaResponseNetworkModel: BaseMappable {
     }
     
     init(model: PizzaModel) {
-        self.ingredients = model.ingredientIds
+        self.name = model.name
         self.imageUrl = model.imageUrl?.absoluteString
-        self.ingredients = model.ingredientIds
+        self.ingredients = model.ingredients?.map({ return $0.id })
     }
 }

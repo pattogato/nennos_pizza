@@ -87,15 +87,7 @@ final class MenuDataProvider: MenuDataProviderProtocol {
     }
     
     private func createViewModelsFrom(pizzaModels: [PizzaModel]) -> [MenuItemViewModelProtocol] {
-        var retVal = [MenuItemViewModelProtocol]()
-        // Create viewmodels only once per load data
-        pizzaModels.forEach({ (pizzaModel) in
-            let ingredientModelsForPizza = self.ingredientStorage.getIngredientsForPizza(model: pizzaModel)
-            retVal.append(MenuItemViewModel(model: pizzaModel,
-                                  ingredients: ingredientModelsForPizza))
-        })
-        
-        return retVal
+        return pizzaModels.map({ return MenuItemViewModel(model: $0) })
     }
     
 }
@@ -125,7 +117,7 @@ final class MockedMenuDataProvider: MenuDataProviderProtocol {
     }
     
     func getModelAt(indexPath: IndexPath) throws -> PizzaModel {
-        return PizzaModel(basePrice: 15, name: "Mocked pizza", ingredientIds: nil, imageUrl: nil)
+        return PizzaModel(basePrice: 15, name: "Mocked pizza", ingredients: nil, imageUrl: nil)
     }
     
     func addItemToCart(at indexPath: IndexPath) {
@@ -147,12 +139,12 @@ fileprivate struct MenuItemViewModel: MenuItemViewModelProtocol {
     }
 
     
-    init(model: PizzaModel, ingredients: [IngredientModel]) {
+    init(model: PizzaModel) {
         self.imageUrl = model.imageUrl
-        self.price = model.basePrice
+        self.price = model.price
         self.title = model.name
         self.ingredients = ""
-        self.ingredients = createIngredientsString(ingredientModels: ingredients)
+        self.ingredients = createIngredientsString(ingredientModels: model.ingredients ?? [IngredientModel]())
     }
     
     /**

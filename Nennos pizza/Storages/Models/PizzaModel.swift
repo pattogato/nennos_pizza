@@ -12,20 +12,19 @@ final class PizzaModel {
     
     var basePrice: Double
     var name: String
-    var ingredientIds: [Int]?
+    var ingredients: [IngredientModel]?
     var imageUrl: URL?
     
-    init(basePrice: Double, name: String, ingredientIds: [Int]?, imageUrl: URL?) {
+    init(basePrice: Double, name: String, ingredients: [IngredientModel]?, imageUrl: URL?) {
         self.basePrice = basePrice
         self.name = name
-        self.ingredientIds = ingredientIds
+        self.ingredients = ingredients
         self.imageUrl = imageUrl
     }
     
     init(networkModel: PizzaNetworkModel, basePrice: Double) {
         self.basePrice = basePrice
         self.name = networkModel.name ?? ""
-        self.ingredientIds = networkModel.ingredients
         self.imageUrl = URL(string: networkModel.imageUrl ?? "")
     }
     
@@ -35,7 +34,9 @@ final class PizzaModel {
 extension PizzaModel: ShoppableItem {
     
     var price: Double {
-        return basePrice
+        var sum: Double = 0
+        ingredients?.forEach({ sum += $0.price })
+        return basePrice + sum
     }
     
     var associatedObject: AnyObject {
