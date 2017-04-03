@@ -40,3 +40,17 @@ extension UIColor {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }
+
+/**
+ Compare two arrays by their element's values
+ */
+func ~= <T: Equatable>(left: [T], right: [T]) -> Bool {
+    var retVal = true
+    for item in left {
+        if !right.contains(item) {
+            retVal = false
+            break
+        }
+    }
+    return retVal
+}

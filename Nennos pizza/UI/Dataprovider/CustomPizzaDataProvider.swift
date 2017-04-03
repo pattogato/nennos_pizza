@@ -143,9 +143,17 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
     }
     
     private func getCustomPizza() -> PizzaModel? {
+        
+        // Returns the name of the pizza
         func getName() -> String {
             return "Custom " + (isCreateMode ? "pizza" : (pizza?.name ?? ""))
         }
+        
+        // If the user didn't change the original pizza, return that
+        if !isCreateMode && selectedIngredients ~= (pizza?.ingredients ?? [IngredientModel]()) {
+            return pizza
+        }
+
         assert(basePrice != Double.greatestFiniteMagnitude, "Base price must be set")
         guard selectedIngredients.count > 0 else {
             return nil
