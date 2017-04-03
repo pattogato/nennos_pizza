@@ -34,6 +34,7 @@ class CustomPizzaViewController: UIViewController, NotificationProtocol {
         
         dataProvider.delegate = self
         setupData()
+        
     }
     
     private func setupData() {
@@ -62,6 +63,11 @@ class CustomPizzaViewController: UIViewController, NotificationProtocol {
         self.title = dataProvider.getTitle()
         setupAddToCartButton(priceString: dataProvider.getSumPrice().priceString)
         
+        for indexPath in dataProvider.selectedItems() {
+            tableView.selectRow(at: indexPath,
+                                animated: false,
+                                scrollPosition: .none)
+        }
     }
     
     fileprivate func setupAddToCartButton(priceString: String) {
@@ -112,7 +118,6 @@ extension CustomPizzaViewController: UITableViewDelegate, UITableViewDataSource 
         }
         do {
             cell.setupUI(viewModel: try dataProvider.modelFor(indexPath: indexPath))
-            cell.setSelected(dataProvider.isModelSelected(indexPath: indexPath), animated: false)
         } catch {
             AlertHelper.showAlert(title: "error.title".localized,
                                   message: "error.network.message".localized,

@@ -13,7 +13,7 @@ protocol CustomPizzaDataProviderProtocol: AsyncLoadingDataProviderProtocol {
     // For tableview
     func numberOfRows() -> Int
     func modelFor(indexPath: IndexPath) throws -> IngredientViewModelProtocol
-    func isModelSelected(indexPath: IndexPath) -> Bool
+    func selectedItems() -> [IndexPath]
     func selecItemAt(indexPath: IndexPath)
     func deSelecItemAt(indexPath: IndexPath)
     // Getters
@@ -85,11 +85,18 @@ final class CustomPizzaDataProvider: CustomPizzaDataProviderProtocol {
         return IngredientViewModel(ingredientModel: ingredients[indexPath.row])
     }
     
-    func isModelSelected(indexPath: IndexPath) -> Bool {
-        guard let ingredient = ingredients?[indexPath.row] else {
-            return false
+    func selectedItems() -> [IndexPath] {
+        var indexPaths = [IndexPath]()
+        guard let ingredients = self.ingredients else {
+            return indexPaths
         }
-        return selectedIngredients.contains(ingredient)
+        for (index,ingredient) in ingredients.enumerated() {
+            if selectedIngredients.contains(ingredient) {
+                indexPaths.append(IndexPath(row: index, section: 0))
+            }
+        }
+        
+        return indexPaths
     }
     
     func selecItemAt(indexPath: IndexPath) {
@@ -259,6 +266,10 @@ final class MockedCustomPizzaDataProviderProtocol: CustomPizzaDataProviderProtoc
     
     func addPizzaToCart() -> Bool {
         return true
+    }
+    
+    func selectedItems() -> [IndexPath] {
+        return [IndexPath]()
     }
 }
 
