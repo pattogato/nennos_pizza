@@ -22,6 +22,7 @@ class StorageTests: XCTestCase {
         drinkStorage = DIManager.resolve(service: DrinkStorageProtocol.self)
         pizzaStorage = DIManager.resolve(service: PizzaStorageProtocol.self)
         ingredientStorage = DIManager.resolve(service: IngredientStorageProtocol.self)
+        
     }
     
     func testFetchDrinks() {
@@ -38,6 +39,12 @@ class StorageTests: XCTestCase {
             pizzas = newPizzas
         })
         expect(pizzas.count).toEventuallyNot(equal(0), timeout: TestContsants.networkTimeout)
+    }
+    
+    func testGetPizzaBasePrice() {
+        _ = pizzaStorage.getPizzas().then(execute: { _ -> Void in
+            expect(self.pizzaStorage.getBasePrice()).notTo(equal(0))
+        })
     }
     
     func testFetchIngredients() {
