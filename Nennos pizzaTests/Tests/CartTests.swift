@@ -29,10 +29,9 @@ class CartTests: XCTestCase {
     }
     
     func testRemoveItemFromCart() {
-        let item = createExampleItem(num: 0)
-        cartManager.addItemToCart(item: item)
+        cartManager.addItemToCart(item: createExampleItem(num: 0))
         expect(self.cartManager.items.count).to(equal(1))
-        cartManager.removeItemFromCart(item: item)
+        cartManager.removeItemFromCart(item: self.cartManager.items[0])
         expect(self.cartManager.items.count).to(equal(0))
     }
     
