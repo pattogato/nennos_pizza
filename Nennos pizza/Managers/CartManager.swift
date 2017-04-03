@@ -21,6 +21,7 @@ protocol CartManagerProtocol {
     func removeItemFromCart(item: ShoppableItem)
     func getSumPrice() -> Double
     func postCart() -> Promise<Void>
+    func clearCart()
     
     var items: [ShoppableItem] { get }
 }
@@ -65,9 +66,13 @@ final class CartManager: CartManagerProtocol {
             drinkIds: drinks.map({ $0.id }),
             pizzas: pizzas.map({ return PizzaResponseNetworkModel(model: $0)  })
         ).then(execute: { (_) -> Promise<Void> in
-            self.items.removeAll()
+            self.clearCart()
             return Promise { fulfill, reject in fulfill() }
         })
+    }
+    
+    func clearCart() {
+        self.items.removeAll()
     }
     
 }

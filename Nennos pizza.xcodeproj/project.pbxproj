@@ -65,6 +65,7 @@
 		B1E35AC01E924A9300DF83FF /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35ABF1E924A9300DF83FF /* StorageTests.swift */; };
 		B1E35AC21E92502E00DF83FF /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC11E92502E00DF83FF /* TestConstants.swift */; };
 		B1E35AC61E92643B00DF83FF /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC51E92643B00DF83FF /* ServiceTests.swift */; };
+		B1E35AC81E926DEB00DF83FF /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC71E926DEB00DF83FF /* CartTests.swift */; };
 		B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */; };
 		B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */; };
 		B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */; };
@@ -151,6 +152,7 @@
 		B1E35ABF1E924A9300DF83FF /* StorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 		B1E35AC11E92502E00DF83FF /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		B1E35AC51E92643B00DF83FF /* ServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		B1E35AC71E926DEB00DF83FF /* CartTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
 		B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
 		B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPizzaDataProvider.swift; path = Dataprovider/CustomPizzaDataProvider.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 			children = (
 				B1E35ABF1E924A9300DF83FF /* StorageTests.swift */,
 				B1E35AC51E92643B00DF83FF /* ServiceTests.swift */,
+				B1E35AC71E926DEB00DF83FF /* CartTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				B1E35ABC1E9248F500DF83FF /* Extensions.swift in Sources */,
 				B1E35AC01E924A9300DF83FF /* StorageTests.swift in Sources */,
 				B1E35AA81E9244EB00DF83FF /* DataprovidersAssembly.swift in Sources */,
+				B1E35AC81E926DEB00DF83FF /* CartTests.swift in Sources */,
 				B1E35AB11E92478000DF83FF /* PizzaStorage.swift in Sources */,
 				B1E35AC61E92643B00DF83FF /* ServiceTests.swift in Sources */,
 				B1E35AAD1E92457800DF83FF /* MenuDataProvider.swift in Sources */,
