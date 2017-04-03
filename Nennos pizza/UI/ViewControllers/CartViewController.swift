@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol CartItemViewModelProtocol {
-    var title: String { get }
-    var price: Double { get }
-}
-
 class CartViewController: UIViewController {
 
     fileprivate struct Constants {

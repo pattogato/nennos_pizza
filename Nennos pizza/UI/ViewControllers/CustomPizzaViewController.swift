@@ -10,11 +10,6 @@ import UIKit
 import AlamofireImage
 import SnapKit
 
-protocol IngredientViewModelProtocol {
-    var name: String { get }
-    var price: Double { get }
-}
-
 class CustomPizzaViewController: UIViewController, NotificationProtocol {
     
     var dataProvider: CustomPizzaDataProviderProtocol!

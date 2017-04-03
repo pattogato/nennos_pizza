@@ -6,9 +6,7 @@ target 'Nennos pizza' do
   use_frameworks!
 
   # Pods for Nennos pizza
-  
-    # DAL
-    pod 'RealmSwift', '~> 1.1.0' # Local database'
+
     # Networking
     pod 'Alamofire', '~> 4.4.0' # Local database'
     pod 'AlamofireImage', '~> 3.2.0' # Asnychron image loading
@@ -23,12 +21,18 @@ target 'Nennos pizza' do
     pod 'SnapKit', '~> 3.2.0'
     # Asynchronousity handling
     pod 'PromiseKit', '~> 4.1.7'
-    
-  target 'Nennos pizzaTests' do
-    inherit! :search_paths
+
+end
+
+target 'Nennos pizzaTests' do
+    use_frameworks!
     # Pods for testing
-
-  
-  end
-
+    pod 'Alamofire', '~> 4.4.0' # Local database'
+    pod 'ObjectMapper', '~> 2.2.5' # Mapping JSON objects
+    pod 'AlamofireObjectMapper', '~> 4.1.0' # ObjectMapper with alamofire integration
+    pod 'Swinject', '~> 2.0.0'
+    pod 'PromiseKit', '~> 4.1.7'
+    pod 'Nimble', '~> 6.0.0'
+    pod 'SwinjectStoryboard', '~> 1.0.0'
+    
 end

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load application window
         window = DIManager.resolve(service: UIWindow.self)
         DIManager.resolve(service: ApplicationRouterProtocol.self).start()
-        
+
         return true
     }
 

@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol DrinkViewModelProtocol {
-    var name: String { get }
-    var price: Double { get }
-}
-
 class DrinksViewController: UIViewController, NotificationProtocol {
 
     fileprivate struct Constants {

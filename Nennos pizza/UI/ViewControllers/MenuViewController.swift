@@ -8,13 +8,6 @@
 
 import UIKit
 
-protocol MenuItemViewModelProtocol {
-    var imageUrl: URL? { get }
-    var title: String { get }
-    var ingredients: String { get }
-    var price: Double { get }
-}
-
 class MenuViewController: UIViewController, NotificationProtocol {
 
     @IBOutlet weak var tableView: UITableView!

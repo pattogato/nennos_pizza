@@ -13,6 +13,11 @@ protocol CartDataProviderDelegate: class {
     func refreshData()
 }
 
+protocol CartItemViewModelProtocol {
+    var title: String { get }
+    var price: Double { get }
+}
+
 protocol CartDataProviderProtocol {
     func numberOfRows() -> Int
     func itemAt(indexPath: IndexPath) -> CartItemViewModelProtocol

@@ -9,6 +9,13 @@
 import UIKit
 import PromiseKit
 
+protocol MenuItemViewModelProtocol {
+    var imageUrl: URL? { get }
+    var title: String { get }
+    var ingredients: String { get }
+    var price: Double { get }
+}
+
 protocol MenuDataProviderProtocol: AsyncLoadingDataProviderProtocol {
     func numberOfRows() -> Int
     func itemAt(indexPath: IndexPath) throws -> MenuItemViewModelProtocol

@@ -2,24 +2,22 @@
 //  DIManager.swift
 //  Nennos pizza
 //
-//  Created by Bence Pattogato on 28/03/17.
+//  Created by Bence Pattogato on 03/04/17.
 //  Copyright © 2017 bence.pattogato. All rights reserved.
 //
 
 import Foundation
 import Swinject
-import SwinjectStoryboard
 
 final class DIManager {
     
     static let shared = DIManager()
     
-    fileprivate let assembler = Assembler(container: SwinjectStoryboard.defaultContainer)
+    fileprivate let assembler = Assembler(container: Container())
     
     private init() {
         // Register assemblys
         assembler.apply(assemblies: [
-            ApplicationAssembly(),
             ManagersAssembly(),
             ServicesAssembly(),
             DataprovidersAssembly(),

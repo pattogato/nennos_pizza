@@ -9,6 +9,11 @@
 import UIKit
 import PromiseKit
 
+protocol IngredientViewModelProtocol {
+    var name: String { get }
+    var price: Double { get }
+}
+
 protocol CustomPizzaDataProviderProtocol: AsyncLoadingDataProviderProtocol {
     // For tableview
     func numberOfRows() -> Int

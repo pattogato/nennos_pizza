@@ -9,6 +9,11 @@
 import Foundation
 import PromiseKit
 
+protocol DrinkViewModelProtocol {
+    var name: String { get }
+    var price: Double { get }
+}
+
 protocol DrinksDataProviderProtocol: AsyncLoadingDataProviderProtocol {
     func numberOfRows() -> Int
     func itemAt(indexPath: IndexPath) throws -> DrinkViewModelProtocol
