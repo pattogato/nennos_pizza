@@ -144,7 +144,6 @@ fileprivate struct MenuItemViewModel: MenuItemViewModelProtocol {
         self.price = price
         self.title = title
     }
-
     
     init(model: PizzaModel) {
         self.imageUrl = model.imageUrl
@@ -163,13 +162,13 @@ fileprivate struct MenuItemViewModel: MenuItemViewModelProtocol {
             switch index {
             case 0:
                 // First
-                retVal += ingredientModel.name + " "
+                retVal += ingredientModel.name
             case ingredientModels.count - 1:
                 // Last with dot at the end
                 retVal += ingredientModel.name + "."
             default:
                 // Rest separated with coma,lowercased
-                retVal += ingredientModel.name.lowercased() + ", "
+                retVal += ", " + ingredientModel.name.lowercased() + ", "
             }
         }
         return retVal

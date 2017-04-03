@@ -59,12 +59,15 @@ class MenuViewController: UIViewController, NotificationProtocol {
             // Open custom screen from cell tap
             if let indexPath = sender as? IndexPath {
                 do {
-                    customPizzaVC.dataProvider.setPizza(pizzaModel: try dataProvider.getModelAt(indexPath: indexPath))
+                    let pizza = try dataProvider.getModelAt(indexPath: indexPath)
+                    customPizzaVC.dataProvider.setPizza(pizzaModel: pizza)
+                    customPizzaVC.title = pizza.name.uppercased()
                 } catch {
                     AlertHelper.showAlert(title: "menu.notfound".localized,
                                           message: "menu.notfound.message".localized,
                                           cancelTitle: "error.ok".localized,
                                           from: self)
+                    customPizzaVC.title = "custom.create.title".localized
                 }
             }
         }

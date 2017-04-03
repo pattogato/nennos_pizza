@@ -13,7 +13,7 @@ protocol ShoppableItem {
     var name: String { get }
     var price: Double { get }
     var associatedObject: AnyObject { get }
-    var cartId: String { get }
+    var cartId: String { get set }
 }
 
 protocol CartManagerProtocol {
@@ -42,7 +42,8 @@ final class CartManager: CartManagerProtocol {
     var items = [ShoppableItem]()
     
     func addItemToCart(item: ShoppableItem) {
-        items.append(item)
+        // Need to set a new UUID to differ from the other same elements (eg. two cokes are added)
+        items.append(CartItem(other: item))
     }
     
     func removeItemFromCart(item: ShoppableItem) {
@@ -78,6 +79,7 @@ final class CartManager: CartManagerProtocol {
     
     func clearCart() {
         self.items.removeAll()
+        self.persistanceManager.saveCartItems(items: self.items)
     }
     
     func persistCart() {
@@ -88,4 +90,18 @@ final class CartManager: CartManagerProtocol {
         self.items = persistanceManager.getSavedItems() ?? [ShoppableItem]()
     }
     
+}
+
+private struct CartItem: ShoppableItem {
+    var associatedObject: AnyObject
+    var cartId: String
+    var name: String
+    var price: Double
+    
+    init(other: ShoppableItem) {
+        self.associatedObject = other.associatedObject
+        self.cartId = UUID().uuidString
+        self.name = other.name
+        self.price = other.price
+    }
 }

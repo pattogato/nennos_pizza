@@ -29,7 +29,6 @@ class CustomPizzaViewController: UIViewController, NotificationProtocol {
         
         dataProvider.delegate = self
         setupData()
-        
     }
     
     private func setupData() {
@@ -55,14 +54,16 @@ class CustomPizzaViewController: UIViewController, NotificationProtocol {
                 placeholderImage: nil)
         }
         
-        self.title = dataProvider.getTitle()
-        setupAddToCartButton(priceString: dataProvider.getSumPrice().priceString)
-        
-        for indexPath in dataProvider.selectedItems() {
-            tableView.selectRow(at: indexPath,
-                                animated: false,
-                                scrollPosition: .none)
+        DispatchQueue.main.async {
+            self.setupAddToCartButton(priceString: self.dataProvider.getSumPrice().priceString)
+            
+            for indexPath in self.dataProvider.selectedItems() {
+                self.tableView.selectRow(at: indexPath,
+                                    animated: false,
+                                    scrollPosition: .none)
+            }
         }
+        
     }
     
     fileprivate func setupAddToCartButton(priceString: String) {
