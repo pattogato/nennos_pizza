@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PizzaModel {
+final class PizzaModel: NSObject, NSCoding {
     
     var basePrice: Double
     var name: String
@@ -26,6 +26,22 @@ final class PizzaModel {
         self.basePrice = basePrice
         self.name = networkModel.name ?? ""
         self.imageUrl = URL(string: networkModel.imageUrl ?? "")
+    }
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(imageUrl, forKey: "imageUrl")
+        aCoder.encode(basePrice, forKey: "basePrice")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(ingredients, forKey: "ingredients")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let imageUrl = aDecoder.decodeObject(forKey: "imageUrl") as! URL
+        let name = aDecoder.decodeObject(forKey: "name") as! String
+        let basePrice = aDecoder.decodeDouble(forKey: "basePrice")
+        let ingredients = aDecoder.decodeObject(forKey: "ingredients") as! [IngredientModel]
+        
+        self.init(basePrice: basePrice, name: name, ingredients: ingredients, imageUrl: imageUrl)
     }
     
     // Must be here, because extension cannot store property

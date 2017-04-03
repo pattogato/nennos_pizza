@@ -66,6 +66,8 @@
 		B1E35AC21E92502E00DF83FF /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC11E92502E00DF83FF /* TestConstants.swift */; };
 		B1E35AC61E92643B00DF83FF /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC51E92643B00DF83FF /* ServiceTests.swift */; };
 		B1E35AC81E926DEB00DF83FF /* CartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC71E926DEB00DF83FF /* CartTests.swift */; };
+		B1E35ACA1E9275B200DF83FF /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC91E9275B200DF83FF /* PersistanceManager.swift */; };
+		B1E35ACB1E927A7400DF83FF /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E35AC91E9275B200DF83FF /* PersistanceManager.swift */; };
 		B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */; };
 		B1EE8B0E1E8964C8003F7782 /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */; };
 		B1EE8B101E896760003F7782 /* CustomPizzaDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */; };
@@ -153,6 +155,7 @@
 		B1E35AC11E92502E00DF83FF /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		B1E35AC51E92643B00DF83FF /* ServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		B1E35AC71E926DEB00DF83FF /* CartTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTests.swift; sourceTree = "<group>"; };
+		B1E35AC91E9275B200DF83FF /* PersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		B1EE8B0B1E89632F003F7782 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		B1EE8B0D1E8964C8003F7782 /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
 		B1EE8B0F1E896760003F7782 /* CustomPizzaDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPizzaDataProvider.swift; path = Dataprovider/CustomPizzaDataProvider.swift; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 				B15211891E8A4F1D0042119E /* DIManager.swift */,
 				B152117F1E8A4B2D0042119E /* ApplicationRouter.swift */,
 				B1921E381E8E69DB00043C5B /* CartManager.swift */,
+				B1E35AC91E9275B200DF83FF /* PersistanceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -694,6 +698,7 @@
 				B152117C1E8A48710042119E /* ApplicationAssembly.swift in Sources */,
 				B13BA12E1E8E73B10085CF41 /* LoaderHelper.swift in Sources */,
 				B1EE8B0C1E89632F003F7782 /* NotificationHelper.swift in Sources */,
+				B1E35ACA1E9275B200DF83FF /* PersistanceManager.swift in Sources */,
 				B1AF237B1E8DA880004E52B0 /* IngredientModel.swift in Sources */,
 				B1AF23751E8DA737004E52B0 /* IngredientStorage.swift in Sources */,
 				B1921E351E8E57B100043C5B /* BaseInMemoryStorage.swift in Sources */,
@@ -733,6 +738,7 @@
 				B1E35ABC1E9248F500DF83FF /* Extensions.swift in Sources */,
 				B1E35AC01E924A9300DF83FF /* StorageTests.swift in Sources */,
 				B1E35AA81E9244EB00DF83FF /* DataprovidersAssembly.swift in Sources */,
+				B1E35ACB1E927A7400DF83FF /* PersistanceManager.swift in Sources */,
 				B1E35AC81E926DEB00DF83FF /* CartTests.swift in Sources */,
 				B1E35AB11E92478000DF83FF /* PizzaStorage.swift in Sources */,
 				B1E35AC61E92643B00DF83FF /* ServiceTests.swift in Sources */,

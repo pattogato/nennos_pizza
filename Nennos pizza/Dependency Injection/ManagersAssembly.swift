@@ -26,8 +26,16 @@ final class ManagersAssembly: Assembly {
         
         // Resolve cartmanager
         container.register(CartManagerProtocol.self) { r in
-            return CartManager(services: r.resolve(ServicesProtocol.self)!)
+            return CartManager(
+                services: r.resolve(ServicesProtocol.self)!,
+                persistanceManager: r.resolve(PersistanceManagerProtocol.self)!
+            )
         }.inObjectScope(.container)
+        
+        // Persistance manager
+        container.register(PersistanceManagerProtocol.self) { r in
+            return PersistanceManager()
+        }
     
     }
     

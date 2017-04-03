@@ -22,6 +22,8 @@ protocol CartManagerProtocol {
     func getSumPrice() -> Double
     func postCart() -> Promise<Void>
     func clearCart()
+    func persistCart()
+    func loadPersistedCart()
     
     var items: [ShoppableItem] { get }
 }
@@ -29,9 +31,12 @@ protocol CartManagerProtocol {
 final class CartManager: CartManagerProtocol {
     
     let services: ServicesProtocol
+    let persistanceManager: PersistanceManagerProtocol
     
-    init(services: ServicesProtocol) {
+    init(services: ServicesProtocol,
+         persistanceManager: PersistanceManagerProtocol) {
         self.services = services
+        self.persistanceManager = persistanceManager
     }
     
     var items = [ShoppableItem]()
@@ -73,6 +78,14 @@ final class CartManager: CartManagerProtocol {
     
     func clearCart() {
         self.items.removeAll()
+    }
+    
+    func persistCart() {
+        persistanceManager.saveCartItems(items: self.items)
+    }
+    
+    func loadPersistedCart() {
+        self.items = persistanceManager.getSavedItems() ?? [ShoppableItem]()
     }
     
 }

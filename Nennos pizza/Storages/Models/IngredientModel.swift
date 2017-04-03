@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class IngredientModel: Equatable {
+final class IngredientModel: NSObject, NSCoding {
     
     var id: Int
     var price: Double
@@ -24,6 +24,19 @@ final class IngredientModel: Equatable {
         self.id = networkModel.id ?? -1
         self.price = networkModel.price ?? 0
         self.name = networkModel.name ?? ""
+    }
+    
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: "id")
+        aCoder.encode(price, forKey: "price")
+        aCoder.encode(name, forKey: "name")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let id = aDecoder.decodeInteger(forKey: "id")
+        let price = aDecoder.decodeDouble(forKey: "price")
+        let name = aDecoder.decodeObject(forKey: "name") as! String
+        self.init(id: id, price: price, name: name)
     }
     
 }

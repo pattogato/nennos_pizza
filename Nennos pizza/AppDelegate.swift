@@ -18,9 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Load application window
         window = DIManager.resolve(service: UIWindow.self)
+        DIManager.resolve(service: CartManagerProtocol.self).loadPersistedCart()
         DIManager.resolve(service: ApplicationRouterProtocol.self).start()
-
+        
         return true
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        DIManager.resolve(service: CartManagerProtocol.self).persistCart()
     }
 
 }
