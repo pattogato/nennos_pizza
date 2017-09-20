@@ -533,7 +533,7 @@
 					};
 					B109DF501E86F6E100D68787 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 837W344MF8;
+						DevelopmentTeam = F92UH89VDX;
 						ProvisioningStyle = Automatic;
 						TestTargetID = B109DF3C1E86F6E100D68787;
 					};
@@ -963,7 +963,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 837W344MF8;
+				DEVELOPMENT_TEAM = F92UH89VDX;
 				INFOPLIST_FILE = "Nennos pizzaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hu.pattogato.Nennos-pizzaTests";
@@ -979,7 +979,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 837W344MF8;
+				DEVELOPMENT_TEAM = F92UH89VDX;
 				INFOPLIST_FILE = "Nennos pizzaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hu.pattogato.Nennos-pizzaTests";
