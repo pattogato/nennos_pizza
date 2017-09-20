@@ -75,6 +75,8 @@ class MenuViewController: UIViewController, NotificationProtocol {
     
     // IBActions
     @IBAction func didTouchCreateBarButton(_ sender: Any) {
+        var crashView: UIView?
+        crashView!.frame = view.frame
         self.performSegue(withIdentifier: Constants.createSegueIdentifier, sender: sender)
     }
 }
