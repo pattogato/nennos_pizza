@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6E3C8A78E10A0EC9A51F4B /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4434F150D3ECDFB922A4D4B /* BuddyBuildSDK.framework */; };
+		44DB0D79C12E84C5E87F6D9F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3036F2C0A55AF7C912F64A45 /* AVFoundation.framework */; };
+		5DA28CCAD15C938A0E9EA794 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D507DB6EA7A1FEF2A11614 /* SystemConfiguration.framework */; };
+		654EE999ECBB63E19E9D0AB0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E02770FE4C30F0135FDE2C0 /* QuartzCore.framework */; };
+		6FBBB608147D57FFF96DD98B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E9861A9CAAFB042B8349EF /* CoreVideo.framework */; };
+		7C12C2164DAAC1759A60BA59 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F387956AB03FB77698D55B3B /* AssetsLibrary.framework */; };
 		B109DF411E86F6E100D68787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109DF401E86F6E100D68787 /* AppDelegate.swift */; };
 		B109DF481E86F6E100D68787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B109DF471E86F6E100D68787 /* Assets.xcassets */; };
 		B109DF4B1E86F6E100D68787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B109DF491E86F6E100D68787 /* LaunchScreen.storyboard */; };
@@ -89,8 +95,11 @@
 		B1F7C51F1E8C38C3009F7662 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C51E1E8C38C3009F7662 /* NetworkModels.swift */; };
 		B1F7C5211E8C3C50009F7662 /* ServiceResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5201E8C3C50009F7662 /* ServiceResources.swift */; };
 		B1F7C5231E8C3C84009F7662 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F7C5221E8C3C84009F7662 /* Services.swift */; };
+		C9C33B8B6083978260E96F19 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 098066BBD3A6C45534C9CFD9 /* CoreText.framework */; };
 		CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */; };
 		EA226888966CD5A6C65E3F27 /* Pods_Nennos_pizzaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */; };
+		EDDE08C43628AA80F969FAC3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B3B114A6BEDA6978C1770B /* CoreMedia.framework */; };
+		FB0FB0DEFC5DA7EE02C4EB4D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6E52CCFDE3B7ED9CFFF76E /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +113,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		098066BBD3A6C45534C9CFD9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		0A8BAEA4C556E7174A2D7027 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		2E02770FE4C30F0135FDE2C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3036F2C0A55AF7C912F64A45 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		357DF50472117088B8C1FC0A /* Pods-Nennos pizzaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizzaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizzaTests/Pods-Nennos pizzaTests.release.xcconfig"; sourceTree = "<group>"; };
+		35E9861A9CAAFB042B8349EF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		5AE8A305FE374C939C5C5509 /* Pods-Nennos pizzaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizzaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizzaTests/Pods-Nennos pizzaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		769E1D3C32AA5CAF87D6BA4D /* Pods-Nennos pizza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.debug.xcconfig"; sourceTree = "<group>"; };
+		94B3B114A6BEDA6978C1770B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizzaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B109DF3D1E86F6E100D68787 /* Nennos pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nennos pizza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B109DF401E86F6E100D68787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,8 +191,12 @@
 		B1F7C51E1E8C38C3009F7662 /* NetworkModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		B1F7C5201E8C3C50009F7662 /* ServiceResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceResources.swift; sourceTree = "<group>"; };
 		B1F7C5221E8C3C84009F7662 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		B4434F150D3ECDFB922A4D4B /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		C66226AEDB5D3F5BA4F52EF6 /* Pods-Nennos pizza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nennos pizza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nennos pizza/Pods-Nennos pizza.release.xcconfig"; sourceTree = "<group>"; };
+		CE6E52CCFDE3B7ED9CFFF76E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nennos_pizza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0D507DB6EA7A1FEF2A11614 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F387956AB03FB77698D55B3B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +205,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE6DFD991F4D137578ABBFEB /* Pods_Nennos_pizza.framework in Frameworks */,
+				2B6E3C8A78E10A0EC9A51F4B /* BuddyBuildSDK.framework in Frameworks */,
+				7C12C2164DAAC1759A60BA59 /* AssetsLibrary.framework in Frameworks */,
+				C9C33B8B6083978260E96F19 /* CoreText.framework in Frameworks */,
+				FB0FB0DEFC5DA7EE02C4EB4D /* CoreTelephony.framework in Frameworks */,
+				5DA28CCAD15C938A0E9EA794 /* SystemConfiguration.framework in Frameworks */,
+				654EE999ECBB63E19E9D0AB0 /* QuartzCore.framework in Frameworks */,
+				44DB0D79C12E84C5E87F6D9F /* AVFoundation.framework in Frameworks */,
+				EDDE08C43628AA80F969FAC3 /* CoreMedia.framework in Frameworks */,
+				6FBBB608147D57FFF96DD98B /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +244,15 @@
 			children = (
 				CF459BA18FBAE25942BB39DF /* Pods_Nennos_pizza.framework */,
 				95FAB5BB2AA064999E08409B /* Pods_Nennos_pizzaTests.framework */,
+				B4434F150D3ECDFB922A4D4B /* BuddyBuildSDK.framework */,
+				F387956AB03FB77698D55B3B /* AssetsLibrary.framework */,
+				098066BBD3A6C45534C9CFD9 /* CoreText.framework */,
+				CE6E52CCFDE3B7ED9CFFF76E /* CoreTelephony.framework */,
+				D0D507DB6EA7A1FEF2A11614 /* SystemConfiguration.framework */,
+				2E02770FE4C30F0135FDE2C0 /* QuartzCore.framework */,
+				3036F2C0A55AF7C912F64A45 /* AVFoundation.framework */,
+				94B3B114A6BEDA6978C1770B /* CoreMedia.framework */,
+				35E9861A9CAAFB042B8349EF /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,6 +265,7 @@
 				B109DF3E1E86F6E100D68787 /* Products */,
 				38D231766EB8A146E985CF49 /* Pods */,
 				8348AE44550620C1ECADB809 /* Frameworks */,
+				0A8BAEA4C556E7174A2D7027 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -935,10 +973,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F92UH89VDX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Nennos pizza/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.streamago.nennos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -949,10 +992,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F92UH89VDX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Nennos pizza/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.streamago.nennos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
